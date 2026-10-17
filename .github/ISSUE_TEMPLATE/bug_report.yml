@@ -1,0 +1,25 @@
+name: Bug report
+description: Report a reproducible failure using synthetic data.
+body:
+  - type: markdown
+    attributes:
+      value: "For suspected vulnerabilities, follow SECURITY.md. Never include patient data, credentials, cookies, tokens, database URLs or exports."
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit and platform
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Use invented names and identifiers. Include only redacted configuration needed to reproduce.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true

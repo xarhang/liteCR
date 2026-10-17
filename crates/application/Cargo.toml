@@ -1,0 +1,20 @@
+[package]
+name = "litecr-application"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+icu_locid.workspace = true
+icu_plurals.workspace = true
+litecr-domain = { path = "../domain" }
+litecr-matching = { path = "../matching" }
+sha2.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tokio.workspace = true

@@ -1,0 +1,56 @@
+.admin-page { padding-block-start: 1.5rem; }
+.admin-heading { display: flex; align-items: start; justify-content: space-between; gap: 1.25rem; margin-block-end: 1.2rem; }
+.admin-heading .lead { margin-block-end: 0; }
+.admin-badge { flex: 0 0 auto; padding: .4rem .65rem; border: 1px solid var(--color-border); border-radius: 99rem; color: var(--color-text-muted); font-size: .8rem; font-weight: 700; }
+.admin-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 1rem; }
+.admin-card { min-width: 0; display: grid; align-content: start; gap: .9rem; padding: clamp(1rem, 2vw, 1.35rem); border: 1px solid var(--color-border); border-radius: .8rem; background: var(--color-surface); box-shadow: 0 1px 2px rgb(15 23 42 / 6%); }
+.coverage-summary { gap: .75rem; background: var(--color-canvas); box-shadow: none; }
+.coverage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 7rem), 1fr)); gap: .55rem; margin: 0; }
+.coverage-grid > div { min-width: 0; display: grid; align-content: start; gap: .25rem; padding: .65rem .75rem; border: 1px solid var(--color-border); border-radius: .5rem; background: var(--color-surface); }
+.coverage-grid dt { color: var(--color-text-muted); font-size: .8rem; line-height: 1.35; }
+.coverage-grid dd { margin: 0; color: var(--color-text); font-size: 1.35rem; font-variant-numeric: tabular-nums; font-weight: 700; line-height: 1.2; }
+.admin-card h2, .admin-card h3 { margin: 0; }
+.admin-card label { display: grid; gap: .3rem; font-size: .9rem; font-weight: 700; }
+.admin-card input:not([type=checkbox]), .admin-card select, .admin-card textarea { width: 100%; min-width: 0; }
+.admin-card textarea { resize: vertical; line-height: 1.65; }
+.admin-form { display: grid; gap: .75rem; }
+.admin-form + .admin-form { margin-block-start: .4rem; padding-block-start: .9rem; border-block-start: 1px solid var(--color-border); }
+.two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.button-row { display: flex; flex-wrap: wrap; gap: .6rem; }
+.admin-state { margin: 0; padding: .6rem .75rem; border-inline-start: 3px solid var(--color-focus); background: var(--color-canvas); }
+.catalog-entry-list { display: grid; gap: .35rem; max-height: 18rem; overflow: auto; }
+.catalog-entry { display: flex; align-items: center; justify-content: space-between; gap: .75rem; min-height: 3rem; padding: .5rem .65rem; border: 1px solid var(--color-border); border-radius: .4rem; background: var(--color-canvas); color: var(--color-text); text-align: start; cursor: pointer; }
+.catalog-entry:hover, .catalog-entry.selected { border-color: var(--color-action); }
+.catalog-entry > span { min-width: 0; display: grid; gap: .15rem; }
+.catalog-entry small { overflow: hidden; color: var(--color-text-muted); text-overflow: ellipsis; white-space: nowrap; }
+.catalog-entry strong { flex: 0 0 auto; font-size: .8rem; }
+.country-profile-coverage { grid-column: 1 / -1; }
+.country-profile-coverage-list { display: grid; gap: .35rem; max-height: 28rem; overflow: auto; padding-inline-end: .2rem; }
+.country-profile-coverage-row { display: grid; grid-template-columns: minmax(9rem, 1fr) minmax(7rem, .55fr) minmax(4rem, .25fr) auto; align-items: center; gap: .65rem; min-height: 2.8rem; padding: .35rem .55rem; border: 1px solid var(--color-border); border-radius: .4rem; background: var(--color-canvas); }
+.country-profile-coverage-row > span:first-child { min-width: 0; display: grid; gap: .1rem; }
+.country-profile-coverage-row small, .coverage-version { color: var(--color-text-muted); font-size: .8rem; }
+.coverage-version { font-variant-numeric: tabular-nums; text-align: end; }
+.coverage-status { width: fit-content; padding: .15rem .45rem; border: 1px solid var(--color-border); border-radius: 99rem; font-size: .78rem; font-weight: 700; }
+.coverage-published { border-color: var(--color-action); }
+.coverage-draft { border-style: dashed; }
+.coverage-unconfigured { color: var(--color-text-muted); }
+.admin-warning { margin: 0; padding: .7rem .8rem; border-inline-start: 4px solid var(--color-warning); background: var(--color-warning-surface); color: var(--color-text); }
+.publish-confirmation { display: grid; gap: .65rem; padding: .8rem; border: 1px solid var(--color-warning); border-radius: .5rem; background: var(--color-warning-surface); color: var(--color-text); }
+.publish-confirmation p { margin: 0; line-height: 1.55; }
+.preview-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.preview-pair > div { min-width: 0; padding: .8rem; border: 1px solid var(--color-border); border-radius: .55rem; background: var(--color-canvas); }
+.preview-pair span { display: block; color: var(--color-text-muted); font-size: .8rem; font-weight: 700; }
+.preview-pair p { margin-block: .55rem 0; overflow-wrap: anywhere; white-space: pre-wrap; line-height: 1.75; }
+.token-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+.token-grid label { text-transform: capitalize; }
+.contrast-list { display: grid; gap: .3rem; margin: 0; padding-inline-start: 1.2rem; color: var(--color-text-muted); font-size: .84rem; }
+.brand-preview { display: grid; gap: .5rem; padding: 1.25rem; border: 1px solid; border-radius: .65rem; }
+.brand-preview p { margin: 0; line-height: 1.8; overflow-wrap: anywhere; }
+.brand-preview button { width: fit-content; min-height: var(--control-size); padding: .5rem .85rem; border: 2px solid transparent; border-radius: .4rem; outline: 3px solid; outline-offset: 2px; font: inherit; }
+.check-field { display: flex !important; align-items: center; gap: .65rem !important; min-height: 2.75rem; }
+.check-field input { width: 1.2rem; height: 1.2rem; }
+.admin-card .help { margin: 0; }
+@media (max-width: 800px) { .admin-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 540px) { .admin-heading { display: grid; } .two-col, .token-grid, .preview-pair { grid-template-columns: minmax(0, 1fr); } .button-row > .button { flex: 1 1 100%; } .country-profile-coverage-row { grid-template-columns: minmax(0, 1fr) auto; } .country-profile-coverage-row .coverage-version { grid-column: 2; grid-row: 1; } .country-profile-coverage-row .button { grid-column: 1 / -1; } }
+@media (forced-colors: active) { .admin-card, .preview-pair > div, .admin-badge { border: 1px solid CanvasText; } .admin-state, .admin-warning { border: 1px solid CanvasText; } .brand-preview button { outline-color: Highlight; } }
+

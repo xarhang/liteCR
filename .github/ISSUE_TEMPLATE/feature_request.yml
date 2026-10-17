@@ -1,0 +1,17 @@
+name: Feature request
+description: Describe a workflow and the change it needs.
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow and problem
+      description: Explain the user task using synthetic examples. Do not include sensitive data.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed behavior and constraints
+      description: Include relevant access, identity, interoperability or deployment constraints.
+    validations:
+      required: true

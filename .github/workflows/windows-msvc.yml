@@ -1,0 +1,37 @@
+name: Windows MSVC source build
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  msvc-source-build:
+    name: Locked MSVC workspace and test-target build
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - name: Build embedded web assets
+        run: npm ci
+        working-directory: apps/web
+      - name: Compile web assets for embedding
+        run: npm run build
+        working-directory: apps/web
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: "1.85.0"
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: Check Rust formatting
+        run: cargo fmt --all -- --check
+      - name: Compile and link locked MSVC workspace targets
+        run: cargo build --workspace --all-targets --locked
+      - name: Test all database-independent library and binary unit cases
+        run: cargo test --workspace --lib --bins --locked

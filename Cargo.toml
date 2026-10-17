@@ -1,0 +1,45 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/domain",
+    "crates/matching",
+    "crates/application",
+    "crates/infrastructure",
+    "crates/api",
+    "apps/server",
+]
+
+[workspace.package]
+version = "0.1.2"
+edition = "2024"
+rust-version = "1.85"
+license = "AGPL-3.0-or-later"
+publish = false
+
+[workspace.dependencies]
+async-trait = "=0.1.89"
+axum = { version = "=0.8.9", features = ["http1", "json", "tokio"] }
+icu_locid = "=1.5.0"
+icu_plurals = "=1.5.0"
+base64 = "=0.22.1"
+clap = { version = "=4.5.53", features = ["derive", "env"] }
+dotenvy = "=0.15.7"
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.151"
+openidconnect = { version = "=4.0.1", default-features = false, features = ["reqwest", "rustls-tls"] }
+reqwest = { version = "=0.12.28", default-features = false, features = ["json", "rustls-tls", "rustls-tls-native-roots"] }
+sha2 = "=0.10.9"
+subtle = "=2.6.1"
+sqlx = { version = "=0.8.6", default-features = false, features = ["runtime-tokio-rustls", "postgres", "migrate", "macros"] }
+thiserror = "=2.0.17"
+unicode-normalization = "=0.1.25"
+unicode-segmentation = "=1.13.3"
+tokio = { version = "=1.53.2", features = ["macros", "net", "signal", "rt-multi-thread", "time"] }
+tower = { version = "=0.5.2", features = ["util"] }
+tracing = "=0.1.41"
+tracing-subscriber = { version = "=0.3.20", features = ["env-filter", "fmt"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "symbols"

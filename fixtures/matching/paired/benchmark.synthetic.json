@@ -1,0 +1,766 @@
+{
+  "schema_version": "1.0",
+  "benchmark_id": "synthetic-control-paired-mechanics-v1",
+  "data_class": "synthetic_fixture",
+  "purpose": "mechanics_only",
+  "split": "held_out_test",
+  "source_snapshot_digest": "sha256:d21eb224a7186b8e35f50640c0b9f8d859e699ef42b074cb11a6d8c75bfe6214",
+  "label_guide_version": "synthetic-guide-v1",
+  "partition_policy": "identity_connected_v1",
+  "records": [
+    {
+      "record_id": "fixture-record-focus-001-a",
+      "gold_cluster_id": "fixture-cluster-focus-001",
+      "partition_group_id": "fixture-group-focus-001",
+      "split": "held_out_test",
+      "language_tag": "lo-LA",
+      "script": "Laoo",
+      "source_bucket": "fixture-source-a",
+      "completeness_bucket": "fixture-complete"
+    },
+    {
+      "record_id": "fixture-record-focus-001-b",
+      "gold_cluster_id": "fixture-cluster-focus-001",
+      "partition_group_id": "fixture-group-focus-001",
+      "split": "held_out_test",
+      "language_tag": "lo-LA",
+      "script": "Laoo",
+      "source_bucket": "fixture-source-b",
+      "completeness_bucket": "fixture-partial"
+    },
+    {
+      "record_id": "fixture-record-focus-002-a",
+      "gold_cluster_id": "fixture-cluster-focus-002",
+      "partition_group_id": "fixture-group-focus-002",
+      "split": "held_out_test",
+      "language_tag": "en-GB",
+      "script": "Latn",
+      "source_bucket": "fixture-source-a",
+      "completeness_bucket": "fixture-complete"
+    },
+    {
+      "record_id": "fixture-record-focus-002-b",
+      "gold_cluster_id": "fixture-cluster-focus-002",
+      "partition_group_id": "fixture-group-focus-002",
+      "split": "held_out_test",
+      "language_tag": "en-GB",
+      "script": "Latn",
+      "source_bucket": "fixture-source-b",
+      "completeness_bucket": "fixture-partial"
+    },
+    {
+      "record_id": "fixture-record-focus-003-a",
+      "gold_cluster_id": "fixture-cluster-focus-003",
+      "partition_group_id": "fixture-group-focus-003",
+      "split": "held_out_test",
+      "language_tag": "th-TH",
+      "script": "Thai",
+      "source_bucket": "fixture-source-a",
+      "completeness_bucket": "fixture-complete"
+    },
+    {
+      "record_id": "fixture-record-focus-003-b",
+      "gold_cluster_id": "fixture-cluster-focus-003",
+      "partition_group_id": "fixture-group-focus-003",
+      "split": "held_out_test",
+      "language_tag": "th-TH",
+      "script": "Thai",
+      "source_bucket": "fixture-source-b",
+      "completeness_bucket": "fixture-partial"
+    },
+    {
+      "record_id": "fixture-record-focus-004-a",
+      "gold_cluster_id": "fixture-cluster-focus-004",
+      "partition_group_id": "fixture-group-focus-004",
+      "split": "held_out_test",
+      "language_tag": "vi-VN",
+      "script": "Latn",
+      "source_bucket": "fixture-source-a",
+      "completeness_bucket": "fixture-complete"
+    },
+    {
+      "record_id": "fixture-record-focus-004-b",
+      "gold_cluster_id": "fixture-cluster-focus-004",
+      "partition_group_id": "fixture-group-focus-004",
+      "split": "held_out_test",
+      "language_tag": "vi-VN",
+      "script": "Latn",
+      "source_bucket": "fixture-source-b",
+      "completeness_bucket": "fixture-partial"
+    },
+    {
+      "record_id": "fixture-record-focus-005-a",
+      "gold_cluster_id": "fixture-cluster-focus-005",
+      "partition_group_id": "fixture-group-focus-005",
+      "split": "held_out_test",
+      "language_tag": "hi-IN",
+      "script": "Deva",
+      "source_bucket": "fixture-source-a",
+      "completeness_bucket": "fixture-complete"
+    },
+    {
+      "record_id": "fixture-record-focus-005-b",
+      "gold_cluster_id": "fixture-cluster-focus-005",
+      "partition_group_id": "fixture-group-focus-005",
+      "split": "held_out_test",
+      "language_tag": "hi-IN",
+      "script": "Deva",
+      "source_bucket": "fixture-source-b",
+      "completeness_bucket": "fixture-partial"
+    },
+    {
+      "record_id": "fixture-record-focus-006-a",
+      "gold_cluster_id": "fixture-cluster-focus-006",
+      "partition_group_id": "fixture-group-focus-006",
+      "split": "held_out_test",
+      "language_tag": "km-KH",
+      "script": "Khmr",
+      "source_bucket": "fixture-source-a",
+      "completeness_bucket": "fixture-complete"
+    },
+    {
+      "record_id": "fixture-record-focus-006-b",
+      "gold_cluster_id": "fixture-cluster-focus-006",
+      "partition_group_id": "fixture-group-focus-006",
+      "split": "held_out_test",
+      "language_tag": "km-KH",
+      "script": "Khmr",
+      "source_bucket": "fixture-source-b",
+      "completeness_bucket": "fixture-partial"
+    },
+    {
+      "record_id": "fixture-record-focus-007-a",
+      "gold_cluster_id": "fixture-cluster-focus-007",
+      "partition_group_id": "fixture-group-focus-007",
+      "split": "held_out_test",
+      "language_tag": "ar",
+      "script": "Arab",
+      "source_bucket": "fixture-source-a",
+      "completeness_bucket": "fixture-complete"
+    },
+    {
+      "record_id": "fixture-record-focus-007-b",
+      "gold_cluster_id": "fixture-cluster-focus-007",
+      "partition_group_id": "fixture-group-focus-007",
+      "split": "held_out_test",
+      "language_tag": "ar",
+      "script": "Arab",
+      "source_bucket": "fixture-source-b",
+      "completeness_bucket": "fixture-partial"
+    },
+    {
+      "record_id": "fixture-record-focus-008-a",
+      "gold_cluster_id": "fixture-cluster-focus-008",
+      "partition_group_id": "fixture-group-focus-008",
+      "split": "held_out_test",
+      "language_tag": "ru",
+      "script": "Cyrl",
+      "source_bucket": "fixture-source-a",
+      "completeness_bucket": "fixture-complete"
+    },
+    {
+      "record_id": "fixture-record-focus-008-b",
+      "gold_cluster_id": "fixture-cluster-focus-008",
+      "partition_group_id": "fixture-group-focus-008",
+      "split": "held_out_test",
+      "language_tag": "ru",
+      "script": "Cyrl",
+      "source_bucket": "fixture-source-b",
+      "completeness_bucket": "fixture-partial"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "fixture-query-focus-001",
+      "anchor_record_id": "fixture-record-focus-001-a",
+      "split": "held_out_test",
+      "independent_group_id": "fixture-group-focus-001"
+    },
+    {
+      "query_id": "fixture-query-focus-002",
+      "anchor_record_id": "fixture-record-focus-002-a",
+      "split": "held_out_test",
+      "independent_group_id": "fixture-group-focus-002"
+    },
+    {
+      "query_id": "fixture-query-focus-003",
+      "anchor_record_id": "fixture-record-focus-003-a",
+      "split": "held_out_test",
+      "independent_group_id": "fixture-group-focus-003"
+    },
+    {
+      "query_id": "fixture-query-focus-004",
+      "anchor_record_id": "fixture-record-focus-004-a",
+      "split": "held_out_test",
+      "independent_group_id": "fixture-group-focus-004"
+    },
+    {
+      "query_id": "fixture-query-focus-005",
+      "anchor_record_id": "fixture-record-focus-005-a",
+      "split": "held_out_test",
+      "independent_group_id": "fixture-group-focus-005"
+    },
+    {
+      "query_id": "fixture-query-focus-006",
+      "anchor_record_id": "fixture-record-focus-006-a",
+      "split": "held_out_test",
+      "independent_group_id": "fixture-group-focus-006"
+    },
+    {
+      "query_id": "fixture-query-focus-007",
+      "anchor_record_id": "fixture-record-focus-007-a",
+      "split": "held_out_test",
+      "independent_group_id": "fixture-group-focus-007"
+    },
+    {
+      "query_id": "fixture-query-focus-008",
+      "anchor_record_id": "fixture-record-focus-008-a",
+      "split": "held_out_test",
+      "independent_group_id": "fixture-group-focus-008"
+    }
+  ],
+  "pairs": [
+    {
+      "pair_id": "fixture-pair-focus-001-match",
+      "query_id": "fixture-query-focus-001",
+      "candidate_record_id": "fixture-record-focus-001-b",
+      "split": "held_out_test",
+      "label": "match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-locale-match-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-001-nonmatch",
+      "query_id": "fixture-query-focus-001",
+      "candidate_record_id": "fixture-record-focus-002-a",
+      "split": "held_out_test",
+      "label": "non_match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-cross-locale-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-002-match",
+      "query_id": "fixture-query-focus-002",
+      "candidate_record_id": "fixture-record-focus-002-b",
+      "split": "held_out_test",
+      "label": "match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-locale-match-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-002-nonmatch",
+      "query_id": "fixture-query-focus-002",
+      "candidate_record_id": "fixture-record-focus-003-a",
+      "split": "held_out_test",
+      "label": "non_match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-cross-locale-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-003-match",
+      "query_id": "fixture-query-focus-003",
+      "candidate_record_id": "fixture-record-focus-003-b",
+      "split": "held_out_test",
+      "label": "match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-locale-match-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-003-nonmatch",
+      "query_id": "fixture-query-focus-003",
+      "candidate_record_id": "fixture-record-focus-004-a",
+      "split": "held_out_test",
+      "label": "non_match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-cross-locale-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-004-match",
+      "query_id": "fixture-query-focus-004",
+      "candidate_record_id": "fixture-record-focus-004-b",
+      "split": "held_out_test",
+      "label": "match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-locale-match-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-004-nonmatch",
+      "query_id": "fixture-query-focus-004",
+      "candidate_record_id": "fixture-record-focus-005-a",
+      "split": "held_out_test",
+      "label": "non_match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-cross-locale-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-005-match",
+      "query_id": "fixture-query-focus-005",
+      "candidate_record_id": "fixture-record-focus-005-b",
+      "split": "held_out_test",
+      "label": "match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-locale-match-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-005-nonmatch",
+      "query_id": "fixture-query-focus-005",
+      "candidate_record_id": "fixture-record-focus-006-a",
+      "split": "held_out_test",
+      "label": "non_match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-cross-locale-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-006-match",
+      "query_id": "fixture-query-focus-006",
+      "candidate_record_id": "fixture-record-focus-006-b",
+      "split": "held_out_test",
+      "label": "match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-locale-match-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-006-nonmatch",
+      "query_id": "fixture-query-focus-006",
+      "candidate_record_id": "fixture-record-focus-007-a",
+      "split": "held_out_test",
+      "label": "non_match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-cross-locale-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-007-match",
+      "query_id": "fixture-query-focus-007",
+      "candidate_record_id": "fixture-record-focus-007-b",
+      "split": "held_out_test",
+      "label": "match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-locale-match-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-007-nonmatch",
+      "query_id": "fixture-query-focus-007",
+      "candidate_record_id": "fixture-record-focus-008-a",
+      "split": "held_out_test",
+      "label": "non_match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-cross-locale-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-008-match",
+      "query_id": "fixture-query-focus-008",
+      "candidate_record_id": "fixture-record-focus-008-b",
+      "split": "held_out_test",
+      "label": "match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-locale-match-control"
+      ]
+    },
+    {
+      "pair_id": "fixture-pair-focus-008-nonmatch",
+      "query_id": "fixture-query-focus-008",
+      "candidate_record_id": "fixture-record-focus-001-a",
+      "split": "held_out_test",
+      "label": "non_match",
+      "label_status": "synthetic_asserted",
+      "case_tags": [
+        "synthetic-cross-locale-control"
+      ]
+    }
+  ],
+  "systems": [
+    {
+      "system_id": "opencr",
+      "system_version": "synthetic-control-0.0.0",
+      "config_digest": "sha256:d0909e503fc7abd505de7be7745f266ac4e9c3f5cbaaea940d1cbf37fa70900f",
+      "mapping_version": "synthetic-map-v1",
+      "query_results": [
+        {
+          "query_id": "fixture-query-focus-001",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-001-b",
+            "fixture-record-focus-002-a"
+          ],
+          "elapsed_microseconds": 4200,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-002",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-002-b",
+            "fixture-record-focus-003-a"
+          ],
+          "elapsed_microseconds": 4200,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-003",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-003-b",
+            "fixture-record-focus-004-a"
+          ],
+          "elapsed_microseconds": 4200,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-004",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-004-b",
+            "fixture-record-focus-005-a"
+          ],
+          "elapsed_microseconds": 4200,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-005",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-005-b",
+            "fixture-record-focus-006-a"
+          ],
+          "elapsed_microseconds": 4200,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-006",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-006-b",
+            "fixture-record-focus-007-a"
+          ],
+          "elapsed_microseconds": 4200,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-007",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-007-b",
+            "fixture-record-focus-008-a"
+          ],
+          "elapsed_microseconds": 4200,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-008",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-008-b",
+            "fixture-record-focus-001-a"
+          ],
+          "elapsed_microseconds": 4200,
+          "truncated": false
+        }
+      ],
+      "pair_results": [
+        {
+          "pair_id": "fixture-pair-focus-001-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-001-nonmatch",
+          "native_outcome": "synthetic-score-control-negative",
+          "mapped_outcome": "different_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-002-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-002-nonmatch",
+          "native_outcome": "synthetic-score-control-negative",
+          "mapped_outcome": "different_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-003-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-003-nonmatch",
+          "native_outcome": "synthetic-score-control-negative",
+          "mapped_outcome": "different_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-004-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-004-nonmatch",
+          "native_outcome": "synthetic-score-control-negative",
+          "mapped_outcome": "different_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-005-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-005-nonmatch",
+          "native_outcome": "synthetic-score-control-negative",
+          "mapped_outcome": "different_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-006-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-006-nonmatch",
+          "native_outcome": "synthetic-score-control-negative",
+          "mapped_outcome": "different_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-007-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-007-nonmatch",
+          "native_outcome": "synthetic-score-control-negative",
+          "mapped_outcome": "different_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-008-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-008-nonmatch",
+          "native_outcome": "synthetic-score-control-negative",
+          "mapped_outcome": "different_person",
+          "action": "none"
+        }
+      ]
+    },
+    {
+      "system_id": "litecr",
+      "system_version": "synthetic-control-0.0.0",
+      "config_digest": "sha256:84a9e4de84fabfedeca46e7d8d66cc890b0ff163d032ba59430fe5a1ff39fd7f",
+      "mapping_version": "synthetic-map-v1",
+      "query_results": [
+        {
+          "query_id": "fixture-query-focus-001",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-001-b"
+          ],
+          "elapsed_microseconds": 2800,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-002",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-002-b"
+          ],
+          "elapsed_microseconds": 2800,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-003",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-003-b"
+          ],
+          "elapsed_microseconds": 2800,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-004",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-004-b"
+          ],
+          "elapsed_microseconds": 2800,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-005",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-005-b"
+          ],
+          "elapsed_microseconds": 2800,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-006",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-006-b"
+          ],
+          "elapsed_microseconds": 2800,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-007",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-007-b"
+          ],
+          "elapsed_microseconds": 2800,
+          "truncated": false
+        },
+        {
+          "query_id": "fixture-query-focus-008",
+          "status": "complete",
+          "candidate_record_ids": [
+            "fixture-record-focus-008-b"
+          ],
+          "elapsed_microseconds": 2800,
+          "truncated": false
+        }
+      ],
+      "pair_results": [
+        {
+          "pair_id": "fixture-pair-focus-001-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-001-nonmatch",
+          "native_outcome": null,
+          "mapped_outcome": "not_evaluated",
+          "action": "not_applicable"
+        },
+        {
+          "pair_id": "fixture-pair-focus-002-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-002-nonmatch",
+          "native_outcome": null,
+          "mapped_outcome": "not_evaluated",
+          "action": "not_applicable"
+        },
+        {
+          "pair_id": "fixture-pair-focus-003-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-003-nonmatch",
+          "native_outcome": null,
+          "mapped_outcome": "not_evaluated",
+          "action": "not_applicable"
+        },
+        {
+          "pair_id": "fixture-pair-focus-004-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-004-nonmatch",
+          "native_outcome": null,
+          "mapped_outcome": "not_evaluated",
+          "action": "not_applicable"
+        },
+        {
+          "pair_id": "fixture-pair-focus-005-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-005-nonmatch",
+          "native_outcome": null,
+          "mapped_outcome": "not_evaluated",
+          "action": "not_applicable"
+        },
+        {
+          "pair_id": "fixture-pair-focus-006-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-006-nonmatch",
+          "native_outcome": null,
+          "mapped_outcome": "not_evaluated",
+          "action": "not_applicable"
+        },
+        {
+          "pair_id": "fixture-pair-focus-007-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-007-nonmatch",
+          "native_outcome": null,
+          "mapped_outcome": "not_evaluated",
+          "action": "not_applicable"
+        },
+        {
+          "pair_id": "fixture-pair-focus-008-match",
+          "native_outcome": "synthetic-score-control-positive",
+          "mapped_outcome": "same_person",
+          "action": "none"
+        },
+        {
+          "pair_id": "fixture-pair-focus-008-nonmatch",
+          "native_outcome": null,
+          "mapped_outcome": "not_evaluated",
+          "action": "not_applicable"
+        }
+      ]
+    }
+  ]
+}

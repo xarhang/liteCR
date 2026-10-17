@@ -1,0 +1,123 @@
+{
+  "schema_version": 2,
+  "scope": "Pinned OpenCR public-contract observations only; not a deployed-client profile",
+  "source": {
+    "api_version": "1.0.5",
+    "repository": "https://github.com/intrahealth/opencr-api",
+    "commit": "ee30f1fdb8034ed194b00d35e62225127a6eef68",
+    "openapi_path": "fixtures/opencr-openapi-1.0.5-2026-10-10.json",
+    "declared_license": "Apache 2.0",
+    "sha256": "3b9d06016a31b8a29074c1e0293564d6a229c495db022fccb6fc557abc512991"
+  },
+  "operations": [
+    {
+      "operation_id": "getResourceData",
+      "method": "GET",
+      "path": "/fhir/{ResourceType}/{id}",
+      "coverage": "partial",
+      "litecr_route": "/fhir/Patient/{id}",
+      "limitation": "Patient only; scoped bearer binding and Patient.id semantics are not established as OpenCR-equivalent."
+    },
+    {
+      "operation_id": "submitPatientsBundle",
+      "method": "POST",
+      "path": "/fhir",
+      "coverage": "gap",
+      "litecr_route": null,
+      "limitation": "No Bundle submission route; transaction and per-entry identity semantics are unprofiled."
+    },
+    {
+      "operation_id": "fhirSubmitResource",
+      "method": "POST",
+      "path": "/fhir/{ResourceType}",
+      "coverage": "partial",
+      "litecr_route": "/fhir/Patient",
+      "limitation": "Patient only; liteCR-specific headers, required identifier type, bearer auth and response contract differ or remain unverified."
+    },
+    {
+      "operation_id": "breakMatch",
+      "method": "POST",
+      "path": "/ocrux/breakMatch",
+      "coverage": "gap",
+      "litecr_route": null,
+      "limitation": "No OpenCR wire-compatible operation; liteCR review actions do not establish equivalent state transitions or identifiers."
+    },
+    {
+      "operation_id": "unBreakMatch",
+      "method": "POST",
+      "path": "/ocrux/unBreakMatch",
+      "coverage": "gap",
+      "litecr_route": null,
+      "limitation": "No OpenCR wire-compatible operation; reversal semantics and request identity are not inferred."
+    },
+    {
+      "operation_id": "potential-matches",
+      "method": "GET",
+      "path": "/ocrux/potential-matches/{patientID}",
+      "coverage": "gap",
+      "litecr_route": null,
+      "limitation": "No OpenCR wire-compatible operation; liteCR candidate/review APIs have separate payload and authorization contracts."
+    },
+    {
+      "operation_id": "count-match-issues",
+      "method": "GET",
+      "path": "/ocrux/count-match-issues",
+      "coverage": "gap",
+      "litecr_route": null,
+      "limitation": "No OpenCR wire-compatible operation."
+    },
+    {
+      "operation_id": "get-match-issues",
+      "method": "GET",
+      "path": "/ocrux/get-match-issues",
+      "coverage": "gap",
+      "litecr_route": null,
+      "limitation": "No OpenCR wire-compatible operation; queue and filter equivalence are unverified."
+    },
+    {
+      "operation_id": "resolve-match-issue",
+      "method": "POST",
+      "path": "/ocrux/resolve-match-issue",
+      "coverage": "gap",
+      "litecr_route": null,
+      "limitation": "No OpenCR wire-compatible operation; decision payload, authorization and effects are unprofiled."
+    },
+    {
+      "operation_id": "getClients",
+      "method": "GET",
+      "path": "/ocrux/getClients",
+      "coverage": "gap",
+      "litecr_route": null,
+      "limitation": "No OpenCR wire-compatible operation; administrative client enumeration is not exposed."
+    }
+  ],
+  "runtime_source_supplement": {
+    "scope": "Pinned public runtime source observations outside the ten-operation OpenAPI snapshot; not evidence of a deployed route or client requirement",
+    "source": {
+      "repository": "https://github.com/intrahealth/client-registry",
+      "commit": "7569452055dc6de2719e1e362e78a7d7973856d4",
+      "path": "server/lib/routes/fhir.js",
+      "url": "https://github.com/intrahealth/client-registry/blob/7569452055dc6de2719e1e362e78a7d7973856d4/server/lib/routes/fhir.js"
+    },
+    "operations": [
+      {
+        "observation_id": "runtime-put-resource",
+        "method": "PUT",
+        "path": "/fhir/{ResourceType}/{id}",
+        "coverage": "gap",
+        "deployment_status": "unprofiled",
+        "litecr_route": null,
+        "limitation": "Pinned public source routes PUT through its Patient save path; deployed use, update/replay semantics, identity effects, authorization and response contract are unknown."
+      },
+      {
+        "observation_id": "runtime-ihe-pix",
+        "method": "GET",
+        "path": "/fhir/Patient/$ihe-pix",
+        "coverage": "gap",
+        "deployment_status": "unprofiled",
+        "litecr_route": null,
+        "limitation": "Pinned public source includes PIXM handling; deployed use and exact response/identity semantics remain unverified, and the pinned OpenAPI omits its parameter and response schema."
+      }
+    ]
+  }
+}

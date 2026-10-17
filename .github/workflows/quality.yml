@@ -1,0 +1,95 @@
+name: Web and operations quality
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  operations:
+    name: Python operations and deployment contracts
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run migration, install, operations and reconciliation tests
+        run: |
+          python -m unittest discover -s tests/migration -v
+          python -m unittest discover -s tests/migration_operator -v
+          python -m unittest discover -s tests/install -v
+          python -m unittest discover -s tests/operations -v
+          python -m unittest discover -s tests/reconciliation -v
+          python -m unittest discover -s tests/contracts -v
+      - name: Check shell syntax and systemd unit definitions
+        run: |
+          find tools/install tools/operations -type f -name '*.sh' -exec bash -n {} \;
+          root=$(mktemp -d)
+          trap 'rm -rf -- "$root"' EXIT
+          install -d \
+            "$root/etc/systemd/system" \
+            "$root/etc/litecr" \
+            "$root/opt/litecr/current/bin" \
+            "$root/opt/litecr/pending/bin" \
+            "$root/opt/litecr/pending/share/tools/operations" \
+            "$root/run/lock/litecr-release" \
+            "$root/var/lib/litecr" \
+            "$root/var/lib/litecr-migrate" \
+            "$root/var/lib/litecr-worker" \
+            "$root/bin" \
+            "$root/usr/bin"
+          install -m 0644 \
+            infra/release/litecr-api.service \
+            infra/release/litecr-migrate.service \
+            infra/release/litecr-activate.service \
+            infra/release/litecr-worker.service \
+            "$root/etc/systemd/system/"
+          for binary in "$root/opt/litecr/current/bin/litecr" "$root/opt/litecr/pending/bin/litecr"; do
+            printf '#!/bin/sh\nexit 0\n' > "$binary"
+            chmod 0755 "$binary"
+          done
+          for binary in "$root/bin/true" "$root/usr/bin/flock"; do
+            printf '#!/bin/sh\nexit 0\n' > "$binary"
+            chmod 0755 "$binary"
+          done
+          printf '#!/bin/sh\nexit 0\n' > "$root/opt/litecr/pending/share/tools/operations/activate-pending-release.sh"
+          chmod 0755 "$root/opt/litecr/pending/share/tools/operations/activate-pending-release.sh"
+          printf 'root:x:0:0:root:/root:/bin/sh\nlitecr:x:991:991:liteCR API:/var/lib/litecr:/usr/sbin/nologin\nlitecr-migrate:x:992:992:liteCR migration:/var/lib/litecr-migrate:/usr/sbin/nologin\nlitecr-worker:x:993:993:liteCR worker:/var/lib/litecr-worker:/usr/sbin/nologin\n' > "$root/etc/passwd"
+          printf 'root:x:0:\nlitecr:x:991:\nlitecr-migrate:x:992:\nlitecr-worker:x:993:\n' > "$root/etc/group"
+          for env_file in litecr.env migration.env worker.env; do
+            : > "$root/etc/litecr/$env_file"
+          done
+          for unit in sysinit.target network-online.target multi-user.target; do
+            printf '[Unit]\nDescription=Verification stub\n' > "$root/etc/systemd/system/$unit"
+          done
+          printf '[Unit]\nDescription=Verification stub\n[Service]\nExecStart=/bin/true\n' > "$root/etc/systemd/system/postgresql.service"
+          systemd-analyze --root="$root" verify "$root"/etc/systemd/system/*.service
+      - name: Check release metadata
+        run: node --test tests/install/*.mjs
+
+  web:
+    name: Web tests, catalog validation and production build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: npm ci
+        working-directory: apps/web
+      - run: npm audit --audit-level=moderate
+        working-directory: apps/web
+      - run: npm test
+        working-directory: apps/web
+      - run: npm run check:catalog
+        working-directory: apps/web
+      - run: npm run build
+        working-directory: apps/web

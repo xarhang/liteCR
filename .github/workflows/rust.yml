@@ -1,0 +1,100 @@
+name: Rust foundation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  worker-role-acl:
+    name: Current-schema API and worker role ACL rehearsal
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - name: Install web dependencies
+        run: npm ci
+        working-directory: apps/web
+      - name: Build embedded web assets
+        run: npm run build
+        working-directory: apps/web
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: "1.85.0"
+      - uses: Swatinem/rust-cache@v2
+      - name: Install isolated-cluster PostgreSQL tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y postgresql-16
+      - name: Build current-schema CLI
+        run: cargo build --locked -p litecr-server
+      - name: Run non-skippable API/worker database-role rehearsal
+        run: bash tools/operations/test-worker-database-roles.sh "$(realpath target/debug/litecr)"
+
+  verify:
+    name: Rust ${{ matrix.toolchain }} / PostgreSQL ${{ matrix.postgres }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        toolchain: ["1.85.0", "stable"]
+        postgres: ["16.15", "17.6", "18.6"]
+    services:
+      postgres:
+        image: postgres:${{ matrix.postgres }}
+        env:
+          POSTGRES_USER: litecr
+          POSTGRES_PASSWORD: litecr-local-only
+          POSTGRES_DB: litecr_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U litecr -d litecr_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      RUSTUP_TOOLCHAIN: ${{ matrix.toolchain }}
+      LITECR_DATABASE_URL: postgres://litecr:litecr-local-only@localhost:5432/litecr_test
+      LITECR_TEST_DATABASE_URL: postgres://litecr:litecr-local-only@localhost:5432/litecr_test
+      LITECR_MIGRATION_DATABASE_URL: postgres://litecr:litecr-local-only@localhost:5432/litecr_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - name: Install web dependencies
+        run: npm ci
+        working-directory: apps/web
+      - name: Build embedded web assets
+        run: npm run build
+        working-directory: apps/web
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ matrix.toolchain }}
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --all -- --check
+      - run: cargo check --workspace --locked
+      - run: cargo test --workspace --locked -- --test-threads=1
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - run: cargo run --locked -p litecr-server -- version
+      - name: Reject invalid configuration without leaking credentials
+        shell: bash
+        run: |
+          output=$(LITECR_DATABASE_URL='postgres://alice:secret@example.invalid/db' LITECR_DATABASE_MAX_CONNECTIONS=0 cargo run --locked -p litecr-server -- doctor 2>&1 || true)
+          echo "$output"
+          ! grep -F 'secret' <<<"$output"
+          grep -F 'between 1 and 100' <<<"$output"
+      - name: Exercise database migration and doctor
+        run: |
+          cargo run --locked -p litecr-server -- migrate
+          cargo run --locked -p litecr-server -- doctor

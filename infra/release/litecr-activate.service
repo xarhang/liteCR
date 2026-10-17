@@ -1,0 +1,27 @@
+[Unit]
+Description=liteCR compatibility-check and release activation
+After=litecr-migrate.service
+Requires=litecr-migrate.service
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+EnvironmentFile=/etc/litecr/litecr.env
+ExecStart=/usr/bin/flock --exclusive --nonblock /run/lock/litecr-release/lock /opt/litecr/pending/share/tools/operations/activate-pending-release.sh
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+AmbientCapabilities=
+ReadWritePaths=/run/lock/litecr-release /opt/litecr

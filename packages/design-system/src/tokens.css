@@ -1,0 +1,35 @@
+:root,
+[data-mode="light"] {
+  color-scheme: light;
+  --color-canvas: #f8fafc; --color-surface: #fff; --color-text: #0f172a;
+  --color-text-muted: #475569; --color-action: #0f766e; --color-on-action: #fff;
+  --color-border: #64748b; --color-focus: #1d4ed8; --color-danger: #b42318;
+  --color-info-surface: #eff6ff; --space-1: .5rem; --space-2: 1rem;
+  --color-success: #176b3a; --color-warning: #7a4b00;
+  --space-3: 1.5rem; --space-4: 2rem; --control-size: 2.75rem;
+}
+[data-mode="dark"] {
+  color-scheme: dark;
+  --color-canvas: #0f172a; --color-surface: #1e293b; --color-text: #f8fafc;
+  --color-text-muted: #cbd5e1; --color-action: #5eead4; --color-on-action: #042f2e;
+  --color-border: #94a3b8; --color-focus: #93c5fd; --color-danger: #fda29b;
+  --color-info-surface: #172554;
+  --color-success: #6ce9a6; --color-warning: #fec84b;
+}
+[data-contrast="high"][data-mode="light"] {
+  --color-canvas: #fff; --color-surface: #fff; --color-text: #000; --color-text-muted: #111;
+  --color-action: #004c46; --color-on-action: #fff; --color-border: #000;
+  --color-focus: #03c; --color-danger: #8a0000; --color-info-surface: #fff;
+  --color-success: #004b20; --color-warning: #553300;
+}
+[data-contrast="high"][data-mode="dark"] {
+  --color-canvas: #000; --color-surface: #000; --color-text: #fff; --color-text-muted: #fff;
+  --color-action: #ff0; --color-on-action: #000; --color-border: #fff;
+  --color-focus: #0ff; --color-danger: #ff7b72; --color-info-surface: #000;
+  --color-success: #0f6; --color-warning: #ff0;
+}
+[data-density="compact"] { --space-1: .5rem; --space-2: .75rem; --space-3: 1rem; --space-4: 1.5rem; }
+@media (forced-colors: active) {
+  :focus-visible { outline: 3px solid Highlight; }
+  button, input, select, textarea, a { border: 1px solid ButtonText; }
+}

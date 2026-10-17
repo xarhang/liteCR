@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://litecr.invalid/schemas/paired-matching-benchmark-v1.json",
+  "title": "liteCR paired matching benchmark (synthetic mechanics fixture)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "benchmark_id", "data_class", "purpose", "split", "source_snapshot_digest", "label_guide_version", "partition_policy", "records", "queries", "pairs", "systems"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "benchmark_id": {"type": "string", "pattern": "^synthetic-control-[a-z0-9-]{3,48}$"},
+    "data_class": {"const": "synthetic_fixture"},
+    "purpose": {"const": "mechanics_only"},
+    "split": {"const": "held_out_test"},
+    "source_snapshot_digest": {"$ref": "#/$defs/sha256"},
+    "label_guide_version": {"type": "string", "pattern": "^synthetic-guide-[a-z0-9.-]+$"},
+    "partition_policy": {"const": "identity_connected_v1"},
+    "records": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/record"}},
+    "queries": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/query"}},
+    "pairs": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/pair"}},
+    "systems": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {"$ref": "#/$defs/system"}
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "syntheticId": {"type": "string", "pattern": "^fixture-[a-z0-9-]{3,60}$"},
+    "split": {"enum": ["train", "development", "held_out_test"]},
+    "nullableToken": {"type": ["string", "null"], "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,63}$"},
+    "record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["record_id", "gold_cluster_id", "partition_group_id", "split", "language_tag", "script", "source_bucket", "completeness_bucket"],
+      "properties": {
+        "record_id": {"$ref": "#/$defs/syntheticId"},
+        "gold_cluster_id": {"$ref": "#/$defs/syntheticId"},
+        "partition_group_id": {"$ref": "#/$defs/syntheticId"},
+        "split": {"$ref": "#/$defs/split"},
+        "language_tag": {"type": ["string", "null"], "pattern": "^[a-z]{2,3}(-[A-Z]{2})?$"},
+        "script": {"type": ["string", "null"], "pattern": "^[A-Z][a-z]{3}$"},
+        "source_bucket": {"$ref": "#/$defs/nullableToken"},
+        "completeness_bucket": {"$ref": "#/$defs/nullableToken"}
+      }
+    },
+    "query": {
+      "type": "object", "additionalProperties": false,
+      "required": ["query_id", "anchor_record_id", "split", "independent_group_id"],
+      "properties": {
+        "query_id": {"$ref": "#/$defs/syntheticId"},
+        "anchor_record_id": {"$ref": "#/$defs/syntheticId"},
+        "split": {"$ref": "#/$defs/split"},
+        "independent_group_id": {"$ref": "#/$defs/syntheticId"}
+      }
+    },
+    "pair": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pair_id", "query_id", "candidate_record_id", "split", "label", "label_status", "case_tags"],
+      "properties": {
+        "pair_id": {"$ref": "#/$defs/syntheticId"},
+        "query_id": {"$ref": "#/$defs/syntheticId"},
+        "candidate_record_id": {"$ref": "#/$defs/syntheticId"},
+        "split": {"$ref": "#/$defs/split"},
+        "label": {"enum": ["match", "non_match", "uncertain"]},
+        "label_status": {"enum": ["synthetic_asserted", "adjudicated"]},
+        "case_tags": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^synthetic-[a-z0-9-]{2,48}$"}}
+      }
+    },
+    "system": {
+      "type": "object", "additionalProperties": false,
+      "required": ["system_id", "system_version", "config_digest", "mapping_version", "query_results", "pair_results"],
+      "properties": {
+        "system_id": {"enum": ["opencr", "litecr"]},
+        "system_version": {"type": "string", "pattern": "^synthetic-[a-zA-Z0-9._+-]{1,48}$"},
+        "config_digest": {"$ref": "#/$defs/sha256"},
+        "mapping_version": {"type": "string", "pattern": "^synthetic-map-[a-zA-Z0-9._+-]{1,48}$"},
+        "query_results": {"type": "array", "items": {"$ref": "#/$defs/queryResult"}},
+        "pair_results": {"type": "array", "items": {"$ref": "#/$defs/pairResult"}}
+      }
+    },
+    "queryResult": {
+      "type": "object", "additionalProperties": false,
+      "required": ["query_id", "status", "candidate_record_ids", "elapsed_microseconds", "truncated"],
+      "properties": {
+        "query_id": {"$ref": "#/$defs/syntheticId"},
+        "status": {"enum": ["complete", "failed", "unavailable"]},
+        "candidate_record_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/syntheticId"}},
+        "elapsed_microseconds": {"type": ["integer", "null"], "minimum": 0},
+        "truncated": {"type": "boolean"}
+      }
+    },
+    "pairResult": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pair_id", "native_outcome", "mapped_outcome", "action"],
+      "properties": {
+        "pair_id": {"$ref": "#/$defs/syntheticId"},
+        "native_outcome": {"type": ["string", "null"], "maxLength": 128},
+        "mapped_outcome": {"enum": ["same_person", "different_person", "review", "not_evaluated", "unavailable"]},
+        "action": {"enum": ["none", "link", "merge", "not_applicable"]}
+      }
+    }
+  }
+}

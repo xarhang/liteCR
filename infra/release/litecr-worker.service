@@ -1,0 +1,38 @@
+[Unit]
+Description=liteCR optional advisory matching worker (gated; not production-approved)
+Wants=network-online.target
+After=network-online.target postgresql.service
+# An operator must create this marker only after the worker DB role and grants
+# have been independently reviewed and the matching release gates are accepted.
+ConditionPathExists=/etc/litecr/worker.enable
+
+[Service]
+Type=simple
+User=litecr-worker
+Group=litecr-worker
+EnvironmentFile=/etc/litecr/worker.env
+WorkingDirectory=/var/lib/litecr-worker
+ExecStart=/opt/litecr/current/bin/litecr worker
+Restart=on-failure
+RestartSec=5s
+KillSignal=SIGTERM
+TimeoutStopSec=30s
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+AmbientCapabilities=
+ReadWritePaths=/var/lib/litecr-worker
+
+[Install]
+WantedBy=multi-user.target

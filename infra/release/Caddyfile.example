@@ -1,0 +1,6 @@
+# Optional example for an operator-managed Caddy installation.
+# DNS, firewall, TLS policy, and certificate storage are managed separately.
+litecr.example.org {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:8080
+}

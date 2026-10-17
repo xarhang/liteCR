@@ -1,0 +1,30 @@
+[Unit]
+Description=liteCR explicit one-shot schema migration
+After=network-online.target litecr-api.service litecr-worker.service
+Wants=network-online.target
+Conflicts=litecr-api.service litecr-worker.service
+
+[Service]
+Type=oneshot
+User=litecr-migrate
+Group=litecr-migrate
+EnvironmentFile=/etc/litecr/migration.env
+WorkingDirectory=/var/lib/litecr-migrate
+ExecStart=/usr/bin/flock --exclusive --nonblock /run/lock/litecr-release/lock /opt/litecr/pending/bin/litecr migrate
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+AmbientCapabilities=
+ReadWritePaths=/run/lock/litecr-release
+

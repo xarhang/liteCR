@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17.6
+    environment:
+      POSTGRES_DB: litecr
+      POSTGRES_USER: litecr
+      POSTGRES_PASSWORD: litecr-local-only
+    ports:
+      - "127.0.0.1:54329:5432"
+    volumes:
+      - litecr-dev-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U litecr -d litecr"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  litecr-dev-postgres:

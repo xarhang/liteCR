@@ -1,0 +1,212 @@
+{
+  "formatVersion": 1,
+  "description": "Exact-commit candidate license text pins for locked Cargo and npm packages whose package archives omit upstream license files. Candidate/provenance evidence only; human license and attribution review remains pending.",
+  "packages": [
+    {
+      "ecosystem": "npm",
+      "name": "@esbuild/linux-x64",
+      "version": "0.28.2",
+      "packagePath": "node_modules/@esbuild/linux-x64",
+      "resolved": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.28.2.tgz",
+      "integrity": "sha512-4xTZr1FUmSoQW4XIWmit3tzQrUTZM+N3P0XV8xROKYF50XfI7xeO90+1bZvNwxIufQ9hDQVRJH5YhgPVF8A/HQ==",
+      "declaredLicenseMetadata": "MIT",
+      "repositoryUrl": "https://github.com/evanw/esbuild",
+      "sourceCommit": "609683d892977362a0f99026cb74b96263d728a9",
+      "pathInVcs": "npm/@esbuild/linux-x64",
+      "reviewState": "candidate_text_provenance_verified_human_license_and_attribution_review_pending",
+      "files": [
+        {
+          "sourceFilePath": "LICENSE.md",
+          "upstreamFilePath": "LICENSE.md",
+          "immutableCommitUrl": "https://github.com/evanw/esbuild/blob/609683d892977362a0f99026cb74b96263d728a9/LICENSE.md",
+          "bundlePath": "npm/esbuild-linux-x64-0.28.2/LICENSE.md",
+          "byteLength": 1069,
+          "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681"
+        }
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rollup/rollup-linux-x64-gnu",
+      "version": "4.64.2",
+      "packagePath": "node_modules/@rollup/rollup-linux-x64-gnu",
+      "resolved": "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.64.2.tgz",
+      "integrity": "sha512-aIChbkhC4d33bxkVP0LSi2/2lUSGRXE6k4Qa0G7tgpgTOK7kxHTixmx5qC3SKUJ6yUMznHBtQoWaG4QMqLUnhw==",
+      "declaredLicenseMetadata": "MIT",
+      "repositoryUrl": "https://github.com/rollup/rollup",
+      "sourceCommit": "19e0dcbf5aaeab7cc8efd92f7604ca3a20406cd2",
+      "pathInVcs": "npm/linux-x64-gnu",
+      "reviewState": "candidate_text_provenance_verified_human_license_and_attribution_review_pending",
+      "files": [
+        {
+          "sourceFilePath": "LICENSE.md",
+          "upstreamFilePath": "LICENSE.md",
+          "immutableCommitUrl": "https://github.com/rollup/rollup/blob/19e0dcbf5aaeab7cc8efd92f7604ca3a20406cd2/LICENSE.md",
+          "bundlePath": "npm/rollup-4.64.2/LICENSE.md",
+          "byteLength": 35231,
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8"
+        },
+        {
+          "sourceFilePath": "LICENSE-CORE.md",
+          "upstreamFilePath": "LICENSE-CORE.md",
+          "immutableCommitUrl": "https://github.com/rollup/rollup/blob/19e0dcbf5aaeab7cc8efd92f7604ca3a20406cd2/LICENSE-CORE.md",
+          "bundlePath": "npm/rollup-4.64.2/LICENSE-CORE.md",
+          "byteLength": 1135,
+          "sha256": "9dff12bb776f199482bc21fb2aba9615032c0403d19cfd1fa0bf101a9379b146"
+        }
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@esbuild/win32-x64",
+      "version": "0.28.2",
+      "packagePath": "node_modules/@esbuild/win32-x64",
+      "resolved": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.28.2.tgz",
+      "integrity": "sha512-5ebpxr3nWMzrL/rnUI755Jkuee0bHL/Gq0WTF9lvcpv73wAp5eu8MfBUgWK9bhWvZjj7yX8etf/8tI8Ney695g==",
+      "declaredLicenseMetadata": "MIT",
+      "repositoryUrl": "https://github.com/evanw/esbuild",
+      "sourceCommit": "609683d892977362a0f99026cb74b96263d728a9",
+      "pathInVcs": "npm/@esbuild/win32-x64",
+      "reviewState": "candidate_text_provenance_verified_human_license_and_attribution_review_pending",
+      "files": [
+        {
+          "sourceFilePath": "LICENSE.md",
+          "upstreamFilePath": "LICENSE.md",
+          "immutableCommitUrl": "https://github.com/evanw/esbuild/blob/609683d892977362a0f99026cb74b96263d728a9/LICENSE.md",
+          "bundlePath": "npm/esbuild-win32-x64-0.28.2/LICENSE.md",
+          "byteLength": 1069,
+          "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681"
+        }
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rollup/rollup-win32-x64-gnu",
+      "version": "4.64.2",
+      "packagePath": "node_modules/@rollup/rollup-win32-x64-gnu",
+      "resolved": "https://registry.npmjs.org/@rollup/rollup-win32-x64-gnu/-/rollup-win32-x64-gnu-4.64.2.tgz",
+      "integrity": "sha512-yYAuySSs+0X2gSMJPw/Q4jHsHZHyMq1dpAE+XnN790Jg1WuReUAD/+j+e4vuDvS4PXJ4PA4NCzTR4OYtDf18/g==",
+      "declaredLicenseMetadata": "MIT",
+      "repositoryUrl": "https://github.com/rollup/rollup",
+      "sourceCommit": "19e0dcbf5aaeab7cc8efd92f7604ca3a20406cd2",
+      "pathInVcs": "npm/win32-x64-gnu",
+      "reviewState": "candidate_text_provenance_verified_human_license_and_attribution_review_pending",
+      "files": [
+        {
+          "sourceFilePath": "LICENSE.md",
+          "upstreamFilePath": "LICENSE.md",
+          "immutableCommitUrl": "https://github.com/rollup/rollup/blob/19e0dcbf5aaeab7cc8efd92f7604ca3a20406cd2/LICENSE.md",
+          "bundlePath": "npm/rollup-4.64.2/LICENSE.md",
+          "byteLength": 35231,
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8"
+        }
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rollup/rollup-win32-x64-msvc",
+      "version": "4.64.2",
+      "packagePath": "node_modules/@rollup/rollup-win32-x64-msvc",
+      "resolved": "https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.64.2.tgz",
+      "integrity": "sha512-JY1rQdWOJrKutORqKO1uzrHXV86jFiQzfLFKx2s8S1CjLXL9fC5LOIvk0q7Z7PXJvsByt+sdoE1Q2a9gBr4gLQ==",
+      "declaredLicenseMetadata": "MIT",
+      "repositoryUrl": "https://github.com/rollup/rollup",
+      "sourceCommit": "19e0dcbf5aaeab7cc8efd92f7604ca3a20406cd2",
+      "pathInVcs": "npm/win32-x64-msvc",
+      "reviewState": "candidate_text_provenance_verified_human_license_and_attribution_review_pending",
+      "files": [
+        {
+          "sourceFilePath": "LICENSE.md",
+          "upstreamFilePath": "LICENSE.md",
+          "immutableCommitUrl": "https://github.com/rollup/rollup/blob/19e0dcbf5aaeab7cc8efd92f7604ca3a20406cd2/LICENSE.md",
+          "bundlePath": "npm/rollup-4.64.2/LICENSE.md",
+          "byteLength": 35231,
+          "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8"
+        }
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "saxes",
+      "version": "6.0.0",
+      "packagePath": "node_modules/saxes",
+      "resolved": "https://registry.npmjs.org/saxes/-/saxes-6.0.0.tgz",
+      "integrity": "sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==",
+      "declaredLicenseMetadata": "ISC",
+      "repositoryUrl": "https://github.com/lddubeau/saxes",
+      "sourceCommit": "211fa0ebec9b628affc09219199639887174bfc3",
+      "pathInVcs": "",
+      "reviewState": "candidate_text_provenance_verified_human_license_and_attribution_review_pending",
+      "files": [
+        {
+          "sourceFilePath": "LICENSE",
+          "upstreamFilePath": "LICENSE",
+          "immutableCommitUrl": "https://github.com/lddubeau/saxes/blob/211fa0ebec9b628affc09219199639887174bfc3/LICENSE",
+          "bundlePath": "npm/saxes-6.0.0/LICENSE",
+          "byteLength": 3011,
+          "sha256": "0fac2374380621b22e6b50451057721a9c52935b02d16d106a9f04897f061d0e"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "valuable",
+      "version": "0.1.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "registryChecksumSha256": "ba73ea9cf16a25df0c8caa16c51acb937d5712a8429db78a3ee29d5dcacd3a65",
+      "declaredLicenseMetadata": "MIT",
+      "repositoryUrl": "https://github.com/tokio-rs/valuable",
+      "sourceCommit": "9efc29b6e58cef28f6566a47aa7e142a55fead77",
+      "pathInVcs": "valuable",
+      "reviewState": "candidate_text_provenance_verified_human_license_and_attribution_review_pending",
+      "files": [
+        {
+          "sourceFilePath": "LICENSE",
+          "upstreamFilePath": "LICENSE",
+          "immutableCommitUrl": "https://github.com/tokio-rs/valuable/blob/9efc29b6e58cef28f6566a47aa7e142a55fead77/LICENSE",
+          "bundlePath": "cargo/valuable-0.1.1/LICENSE",
+          "byteLength": 1065,
+          "sha256": "ed60d479b8fd1f64e9cbc3de449a16a53ac1b3d1b6aeb9bf9d190a8e93061b44"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "wasite",
+      "version": "0.1.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "registryChecksumSha256": "b8dad83b4f25e74f184f64c43b150b91efe7647395b42289f38e50566d82855b",
+      "declaredLicenseMetadata": "Apache-2.0 OR BSL-1.0 OR MIT",
+      "repositoryUrl": "https://github.com/ardaku/wasite",
+      "sourceCommit": "0c72934ad329ab4670eb017581640c2d6eceb289",
+      "pathInVcs": "",
+      "reviewState": "candidate_text_provenance_verified_human_license_and_attribution_review_pending",
+      "files": [
+        {
+          "sourceFilePath": "LICENSE_APACHE_2_0.txt",
+          "upstreamFilePath": "LICENSE_APACHE_2_0.txt",
+          "immutableCommitUrl": "https://github.com/ardaku/wasite/blob/0c72934ad329ab4670eb017581640c2d6eceb289/LICENSE_APACHE_2_0.txt",
+          "bundlePath": "cargo/wasite-0.1.0/LICENSE_APACHE_2_0.txt",
+          "byteLength": 9723,
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "sourceFilePath": "LICENSE_BOOST_1_0.txt",
+          "upstreamFilePath": "LICENSE_BOOST_1_0.txt",
+          "immutableCommitUrl": "https://github.com/ardaku/wasite/blob/0c72934ad329ab4670eb017581640c2d6eceb289/LICENSE_BOOST_1_0.txt",
+          "bundlePath": "cargo/wasite-0.1.0/LICENSE_BOOST_1_0.txt",
+          "byteLength": 1338,
+          "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+        },
+        {
+          "sourceFilePath": "LICENSE_MIT.txt",
+          "upstreamFilePath": "LICENSE_MIT.txt",
+          "immutableCommitUrl": "https://github.com/ardaku/wasite/blob/0c72934ad329ab4670eb017581640c2d6eceb289/LICENSE_MIT.txt",
+          "bundlePath": "cargo/wasite-0.1.0/LICENSE_MIT.txt",
+          "byteLength": 1036,
+          "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1"
+        }
+      ]
+    }
+  ]
+}

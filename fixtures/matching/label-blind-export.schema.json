@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://litecr.invalid/schemas/label-blind-candidate-export-v1.json",
+  "title": "liteCR label-blind synthetic candidate export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["body", "export_digest"],
+  "properties": {
+    "body": { "$ref": "#/$defs/body" },
+    "export_digest": { "$ref": "#/$defs/digest" }
+  },
+  "$defs": {
+    "digest": { "type": "string", "pattern": "^sha256:[a-fA-F0-9]{64}$" },
+    "queryId": { "type": "string", "pattern": "^q_[A-Za-z0-9_-]{16,64}$" },
+    "candidateId": { "type": "string", "pattern": "^c_[A-Za-z0-9_-]{16,64}$" },
+    "body": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "run_id", "system_version", "config_digest", "queries"],
+      "properties": {
+        "schema_version": { "const": "1.0" },
+        "run_id": { "type": "string", "pattern": "^run_[A-Za-z0-9_-]{16,64}$" },
+        "system_version": { "type": "string", "minLength": 1, "maxLength": 64, "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9._+\\-]{0,62}[A-Za-z0-9])?$" },
+        "config_digest": { "$ref": "#/$defs/digest" },
+        "queries": {
+          "type": "array",
+          "maxItems": 10000,
+          "items": { "$ref": "#/$defs/query" }
+        }
+      }
+    },
+    "query": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["query_id", "status", "candidate_count", "truncated", "elapsed_microseconds", "candidates"],
+      "properties": {
+        "query_id": { "$ref": "#/$defs/queryId" },
+        "status": { "enum": ["complete", "failed", "unavailable"] },
+        "candidate_count": { "type": "integer", "minimum": 0, "maximum": 1000000 },
+        "truncated": { "type": "boolean" },
+        "elapsed_microseconds": { "type": ["integer", "null"], "minimum": 0 },
+        "candidates": {
+          "type": "array",
+          "maxItems": 2000,
+          "items": { "$ref": "#/$defs/candidate" }
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_id", "rank"],
+      "properties": {
+        "candidate_id": { "$ref": "#/$defs/candidateId" },
+        "rank": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

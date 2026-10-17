@@ -1,0 +1,52 @@
+{
+  "resourceType": "Patient",
+  "identifier": [
+    {
+      "system": "urn:synthetic:clinic-a:mrn",
+      "value": "SYN-000042",
+      "type": {
+        "coding": [
+          {
+            "code": "MR"
+          }
+        ]
+      }
+    }
+  ],
+  "active": true,
+  "language": "en",
+  "name": [
+    {
+      "use": "official",
+      "text": "ນາງ ສຸກສະຫວັນ",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/language",
+          "valueCode": "lo"
+        }
+      ],
+      "family": "ສຸກສະຫວັນ",
+      "given": ["ນາງ"]
+    }
+  ],
+  "birthDate": "1986-04",
+  "gender": "female",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+8562000000042",
+      "use": "mobile",
+      "rank": 1
+    }
+  ],
+  "address": [
+    {
+      "use": "home",
+      "type": "physical",
+      "text": "Synthetic address",
+      "line": ["Synthetic road 1"],
+      "city": "Vientiane",
+      "country": "LA"
+    }
+  ]
+}

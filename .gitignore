@@ -1,0 +1,52 @@
+# Generated builds, dependencies and test output
+**/target/
+**/node_modules/
+**/dist/
+**/coverage/
+**/test-results/
+**/playwright-report/
+**/.auth/
+**/*.tsbuildinfo
+/node-v*-linux-x64/
+/node-v*-linux-x64.tar.xz
+
+# Local state and credentials
+/scratch/
+**/.runtime/
+**/*.pid
+*.log
+.env
+.env.*
+!.env.example
+__pycache__/
+/.venv-docs/
+
+# Internal planning and validation history (retained locally)
+/docs/reports/
+/docs/prompts/
+/docs/discovery/
+/docs/design/
+/docs/pilot/
+/docs/evaluation/
+/docs/qa/*
+!/docs/qa/fixtures/
+!/docs/qa/fixtures/**
+!/docs/qa/opencr-public-operation-coverage.json
+/docs/AI-SKILLS.md
+/docs/PHASES.lo.md
+/docs/PLAN.lo.md
+/docs/TECHNICAL-PLAN.md
+/docs/release/CONTRACT.md
+/docs/contracts/API.md
+/docs/contracts/IDENTITY.md
+/docs/contracts/EVENTS.md
+/docs/contracts/opencr-owner-contract-intake.md
+/docs/integration/AI-CONNECTORS.md
+/docs/integration/CONTRACTS.md
+/docs/integration/MCP-SECURITY-PLAN.md
+
+# Workstation-specific review/benchmark harnesses
+/tests/http/
+/tests/load/run-schema27-workload.sh
+/tests/load/schema27-workload.py
+/tools/operations/run-http-sandbox.sh

@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://litecr.invalid/schemas/matching-evaluation-dataset-v1.json",
+  "title": "liteCR matching evaluation dataset (synthetic/authorized controlled input)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "dataset_id", "dataset_status", "purpose", "splits", "records", "clusters", "pair_labels", "queries"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "dataset_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,63}$"},
+    "dataset_status": {"enum": ["synthetic_fixture", "authorized_controlled"]},
+    "purpose": {"enum": ["mechanics_only", "development", "held_out_evaluation"]},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description", "contains_real_person_data", "generator", "seed", "created_at"],
+      "properties": {
+        "description": {"type": "string", "minLength": 1},
+        "contains_real_person_data": {"type": "boolean"},
+        "generator": {"type": "string", "minLength": 1},
+        "seed": {"type": ["integer", "string"]},
+        "created_at": {"type": "string", "format": "date"},
+        "authorization_ref": {"type": "string"}
+      }
+    },
+    "splits": {"type": "array", "minItems": 1, "items": {"enum": ["train", "development", "held_out_test"]}, "uniqueItems": true},
+    "records": {
+      "type": "array", "minItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["record_id", "source_system", "gold_cluster_id", "split", "name_assertions", "date_of_birth", "identifiers", "contacts", "address_token", "case_tags"],
+        "properties": {
+          "record_id": {"type": "string", "pattern": "^syn-rec-[0-9]{3}$"},
+          "source_system": {"type": "string", "pattern": "^urn:litecr:synthetic:source:[a-z0-9-]+$"},
+          "gold_cluster_id": {"type": "string", "pattern": "^syn-person-[0-9]{3}$"},
+          "split": {"enum": ["train", "development", "held_out_test"]},
+          "name_assertions": {
+            "type": "array", "minItems": 1,
+            "items": {"type": "object", "additionalProperties": false, "required": ["original_value", "representation", "normalization_version"], "properties": {
+              "original_value": {"type": "string", "minLength": 1},
+              "script": {"type": ["string", "null"], "minLength": 4},
+              "language": {"type": ["string", "null"], "pattern": "^[a-z]{2,3}(-[A-Z]{2})?$"},
+              "representation": {"enum": ["source_original", "source_variant", "transliteration"]},
+              "normalization_version": {"type": "string", "minLength": 1}
+            }}
+          },
+          "date_of_birth": {"type": ["object", "null"], "additionalProperties": false, "required": ["original_value", "precision", "calendar", "estimated"], "properties": {
+            "original_value": {"type": "string", "pattern": "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$"},
+            "precision": {"enum": ["year", "month", "day", "unknown"]},
+            "calendar": {"enum": ["gregorian", "unknown", "other_context_required"]},
+            "estimated": {"type": "boolean"}
+          }},
+          "identifiers": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["authority", "type", "original_value", "status"], "properties": {
+            "authority": {"type": "string", "pattern": "^urn:litecr:synthetic:authority:[a-z0-9-]+$"},
+            "type": {"type": "string", "minLength": 1},
+            "original_value": {"type": "string", "minLength": 1},
+            "status": {"enum": ["unverified", "verified", "conflicting"]}
+          }}},
+          "contacts": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["kind", "synthetic_token", "shared_or_recycled_possible"], "properties": {
+            "kind": {"enum": ["phone", "email"]},
+            "synthetic_token": {"type": "string", "pattern": "^SYNTHETIC-[A-Z0-9-]+$"},
+            "shared_or_recycled_possible": {"type": "boolean"}
+          }}},
+          "address_token": {"type": ["string", "null"], "pattern": "^SYNTHETIC-[A-Z0-9-]+$"},
+          "case_tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+        }
+      }
+    },
+    "clusters": {
+      "type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["gold_cluster_id", "split", "member_record_ids", "label_status"], "properties": {
+        "gold_cluster_id": {"type": "string", "pattern": "^syn-person-[0-9]{3}$"},
+        "split": {"enum": ["train", "development", "held_out_test"]},
+        "member_record_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^syn-rec-[0-9]{3}$"}},
+        "label_status": {"enum": ["synthetic_asserted", "adjudicated", "uncertain"]},
+        "provenance_ref": {"type": "string"}
+      }}
+    },
+    "pair_labels": {
+      "type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["pair_id", "left_record_id", "right_record_id", "split", "label", "case_tags", "rationale", "label_guide_version", "provenance_ref"], "properties": {
+        "pair_id": {"type": "string", "pattern": "^syn-pair-[0-9]{3}$"},
+        "left_record_id": {"type": "string", "pattern": "^syn-rec-[0-9]{3}$"},
+        "right_record_id": {"type": "string", "pattern": "^syn-rec-[0-9]{3}$"},
+        "split": {"enum": ["train", "development", "held_out_test"]},
+        "label": {"enum": ["match", "non_match", "uncertain"]},
+        "case_tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "rationale": {"type": "string", "minLength": 1},
+        "label_guide_version": {"type": "string", "minLength": 1},
+        "provenance_ref": {"type": "string", "minLength": 1}
+      }}
+    },
+    "queries": {
+      "type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["query_id", "query_record_id", "split", "eligible_match_record_ids", "hard_negative_record_ids", "case_tags"], "properties": {
+        "query_id": {"type": "string", "pattern": "^syn-query-[0-9]{3}$"},
+        "query_record_id": {"type": "string", "pattern": "^syn-rec-[0-9]{3}$"},
+        "split": {"enum": ["train", "development", "held_out_test"]},
+        "eligible_match_record_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^syn-rec-[0-9]{3}$"}},
+        "hard_negative_record_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^syn-rec-[0-9]{3}$"}},
+        "case_tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }}
+    }
+  },
+  "allOf": [
+    {"if": {"properties": {"dataset_status": {"const": "synthetic_fixture"}}}, "then": {"required": ["provenance"], "properties": {"purpose": {"const": "mechanics_only"}, "provenance": {"properties": {"contains_real_person_data": {"const": false}}}}}},
+    {"if": {"properties": {"dataset_status": {"const": "authorized_controlled"}}}, "then": {"required": ["provenance"]}}
+  ]
+}

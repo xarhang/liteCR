@@ -1,0 +1,2298 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "litecr-synthetic-multilingual-subgroups-v3",
+  "dataset_status": "synthetic_fixture",
+  "purpose": "mechanics_only",
+  "provenance": {
+    "description": "Hand-authored invented multilingual strings plus deliberately constructed date-missing one-scalar candidate controls for subgroup attribution and matcher mechanics only; not human-label or accuracy evidence.",
+    "contains_real_person_data": false,
+    "generator": "manual-multilingual-subgroup-fixture-v3",
+    "seed": "fixed-hand-authored",
+    "created_at": "2026-10-09"
+  },
+  "splits": [
+    "train",
+    "development",
+    "held_out_test"
+  ],
+  "records": [
+    {
+      "record_id": "syn-rec-001",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-001",
+      "split": "train",
+      "name_assertions": [
+        {
+          "original_value": "Noy Example",
+          "script": "Latn",
+          "language": "en",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1986-04",
+        "precision": "month",
+        "calendar": "gregorian",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "partial-date"
+      ]
+    },
+    {
+      "record_id": "syn-rec-002",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-001",
+      "split": "train",
+      "name_assertions": [
+        {
+          "original_value": "Noy Example",
+          "script": "Latn",
+          "language": "en",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1986-04-19",
+        "precision": "day",
+        "calendar": "gregorian",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "partial-date"
+      ]
+    },
+    {
+      "record_id": "syn-rec-003",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-002",
+      "split": "train",
+      "name_assertions": [
+        {
+          "original_value": "Mali Sample",
+          "script": "Latn",
+          "language": "en",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1991",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "partial-date-control"
+      ]
+    },
+    {
+      "record_id": "syn-rec-004",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-003",
+      "split": "development",
+      "name_assertions": [
+        {
+          "original_value": "Somchai Example",
+          "script": "Thai",
+          "language": "th",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1980",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "common-name"
+      ]
+    },
+    {
+      "record_id": "syn-rec-005",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-004",
+      "split": "development",
+      "name_assertions": [
+        {
+          "original_value": "Somchai Example",
+          "script": "Thai",
+          "language": "th",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1980",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "common-name"
+      ]
+    },
+    {
+      "record_id": "syn-rec-006",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-005",
+      "split": "development",
+      "name_assertions": [
+        {
+          "original_value": "Kanya Fiction",
+          "script": "Thai",
+          "language": "th",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1992-06-04",
+        "precision": "day",
+        "calendar": "gregorian",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [
+        {
+          "kind": "phone",
+          "synthetic_token": "SYNTHETIC-HOUSEHOLD-PHONE-1",
+          "shared_or_recycled_possible": true
+        }
+      ],
+      "address_token": "SYNTHETIC-HOUSEHOLD-ADDRESS-1",
+      "case_tags": [
+        "household-shared-contact",
+        "household-shared-address"
+      ]
+    },
+    {
+      "record_id": "syn-rec-007",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-006",
+      "split": "development",
+      "name_assertions": [
+        {
+          "original_value": "Anan Fiction",
+          "script": "Thai",
+          "language": "th",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1989-10-22",
+        "precision": "day",
+        "calendar": "gregorian",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [
+        {
+          "kind": "phone",
+          "synthetic_token": "SYNTHETIC-HOUSEHOLD-PHONE-1",
+          "shared_or_recycled_possible": true
+        }
+      ],
+      "address_token": "SYNTHETIC-HOUSEHOLD-ADDRESS-1",
+      "case_tags": [
+        "household-shared-contact",
+        "household-shared-address"
+      ]
+    },
+    {
+      "record_id": "syn-rec-008",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-007",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Ari Example",
+          "script": "Latn",
+          "language": "en",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "2001-02-03",
+        "precision": "day",
+        "calendar": "gregorian",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [
+        {
+          "kind": "phone",
+          "synthetic_token": "SYNTHETIC-TWIN-HOUSEHOLD-PHONE",
+          "shared_or_recycled_possible": true
+        }
+      ],
+      "address_token": "SYNTHETIC-TWIN-HOUSEHOLD-ADDRESS",
+      "case_tags": [
+        "twin-hard-negative"
+      ]
+    },
+    {
+      "record_id": "syn-rec-009",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-008",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Ari Example Jr",
+          "script": "Latn",
+          "language": "en",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "2001-02-03",
+        "precision": "day",
+        "calendar": "gregorian",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [
+        {
+          "kind": "phone",
+          "synthetic_token": "SYNTHETIC-TWIN-HOUSEHOLD-PHONE",
+          "shared_or_recycled_possible": true
+        }
+      ],
+      "address_token": "SYNTHETIC-TWIN-HOUSEHOLD-ADDRESS",
+      "case_tags": [
+        "twin-hard-negative"
+      ]
+    },
+    {
+      "record_id": "syn-rec-010",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-009",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "ສົມໃຈ ຕົວຢ່າງ",
+          "script": "Laoo",
+          "language": "lo",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        },
+        {
+          "original_value": "Somchai Tua Yang",
+          "script": "Latn",
+          "language": "lo-LA",
+          "representation": "transliteration",
+          "normalization_version": "fixture-translit-demo-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1995-08",
+        "precision": "month",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "cross-script",
+        "transliteration-additional-evidence"
+      ]
+    },
+    {
+      "record_id": "syn-rec-011",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-009",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Somchai Tua Yang",
+          "script": "Latn",
+          "language": "lo-LA",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        },
+        {
+          "original_value": "ສົມໃຈ ຕົວຢ່າງ",
+          "script": "Laoo",
+          "language": "lo",
+          "representation": "source_variant",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1995-08-12",
+        "precision": "day",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "cross-script",
+        "transliteration-additional-evidence"
+      ]
+    },
+    {
+      "record_id": "syn-rec-012",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-010",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Le Minh Mock",
+          "script": "Latn",
+          "language": "vi",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1974",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [
+        {
+          "authority": "urn:litecr:synthetic:authority:district-a",
+          "type": "fixture-id",
+          "original_value": "SYNTHETIC-COLLISION-42",
+          "status": "conflicting"
+        }
+      ],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "conflicting-authoritative-id"
+      ]
+    },
+    {
+      "record_id": "syn-rec-013",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-011",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Lan Thi Mock",
+          "script": "Latn",
+          "language": "vi",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1982",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [
+        {
+          "authority": "urn:litecr:synthetic:authority:district-a",
+          "type": "fixture-id",
+          "original_value": "SYNTHETIC-COLLISION-42",
+          "status": "conflicting"
+        }
+      ],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "conflicting-authoritative-id"
+      ]
+    },
+    {
+      "record_id": "syn-rec-014",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-012",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "ກຸ້ ທົດລອງ",
+          "script": "Laoo",
+          "language": "lo",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-015",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-012",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "ກຸ້ ທົດລອງ",
+          "script": "Laoo",
+          "language": "lo",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-016",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-013",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "ກຸ ທົດລອງ",
+          "script": "Laoo",
+          "language": "lo",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-017",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-014",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "กุ่ มาลี",
+          "script": "Thai",
+          "language": "th",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-018",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-014",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "กุ่ มาลี",
+          "script": "Thai",
+          "language": "th",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-019",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-015",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "กุ มาลี",
+          "script": "Thai",
+          "language": "th",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-020",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-016",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "សុភា ក្លែងក្លាយ",
+          "script": "Khmr",
+          "language": "km",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-021",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-016",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "សុភា ក្លែងក្លាយ",
+          "script": "Khmr",
+          "language": "km",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-022",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-017",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "សុភា ក្លែងក្លាយា",
+          "script": "Khmr",
+          "language": "km",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-023",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-018",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Ánh Ngọc",
+          "script": "Latn",
+          "language": "vi",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-024",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-018",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Ánh Ngọc",
+          "script": "Latn",
+          "language": "vi",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-025",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-019",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Anh Ngoc",
+          "script": "Latn",
+          "language": "vi",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-026",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-020",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "क़लम नमूना",
+          "script": "Deva",
+          "language": "hi-IN",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-027",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-020",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "क़लम नमूना",
+          "script": "Deva",
+          "language": "hi-IN",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-028",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-021",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "कलम नमूना",
+          "script": "Deva",
+          "language": "hi-IN",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-029",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-022",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "أحمد مثال",
+          "script": "Arab",
+          "language": "ar",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-030",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-022",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "أحمد مثال",
+          "script": "Arab",
+          "language": "ar",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-031",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-023",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "احمد مثال",
+          "script": "Arab",
+          "language": "ar",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-032",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-024",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Йона Пример",
+          "script": "Cyrl",
+          "language": "ru",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-033",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-024",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Йона Пример",
+          "script": "Cyrl",
+          "language": "ru",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-034",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-025",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Иона Пример",
+          "script": "Cyrl",
+          "language": "ru",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-035",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-026",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "ຄົນ ຕົວຢ່າງ",
+          "language": "lo",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-036",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-026",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "ຄົນ ຕົວຢ່າງ",
+          "language": "lo",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-037",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-027",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "ຄົນ ຕົວຢ່າງ",
+          "language": "lo",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-038",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-028",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Дима Проба",
+          "script": "Cyrl",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-039",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-028",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Дима Проба",
+          "script": "Cyrl",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-040",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-029",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Дима Проб",
+          "script": "Cyrl",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1985",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-041",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-030",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Mira Example",
+          "script": "Latn",
+          "language": "en",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1981",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-042",
+      "source_system": "urn:litecr:synthetic:source:alpha",
+      "gold_cluster_id": "syn-person-031",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Мира Пример",
+          "script": "Cyrl",
+          "language": "ru",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": {
+        "original_value": "1992",
+        "precision": "year",
+        "calendar": "unknown",
+        "estimated": false
+      },
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": []
+    },
+    {
+      "record_id": "syn-rec-043",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-012",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "ກຸ້ ທົດລອງກ",
+          "script": "Laoo",
+          "language": "lo",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": null,
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Laoo"
+      ]
+    },
+    {
+      "record_id": "syn-rec-044",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-014",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "กุ่ มาลีก",
+          "script": "Thai",
+          "language": "th",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": null,
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Thai"
+      ]
+    },
+    {
+      "record_id": "syn-rec-045",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-016",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "សុភា ក្លែងក្លាយក",
+          "script": "Khmr",
+          "language": "km",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": null,
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Khmr"
+      ]
+    },
+    {
+      "record_id": "syn-rec-046",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-018",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Ánh Ngọcx",
+          "script": "Latn",
+          "language": "vi",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": null,
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Latn"
+      ]
+    },
+    {
+      "record_id": "syn-rec-047",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-020",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "क़लम नमूनाक",
+          "script": "Deva",
+          "language": "hi-IN",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": null,
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Deva"
+      ]
+    },
+    {
+      "record_id": "syn-rec-048",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-022",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "أحمد مثالا",
+          "script": "Arab",
+          "language": "ar",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": null,
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Arab"
+      ]
+    },
+    {
+      "record_id": "syn-rec-049",
+      "source_system": "urn:litecr:synthetic:source:beta",
+      "gold_cluster_id": "syn-person-024",
+      "split": "held_out_test",
+      "name_assertions": [
+        {
+          "original_value": "Йона Примера",
+          "script": "Cyrl",
+          "language": "ru",
+          "representation": "source_original",
+          "normalization_version": "fixture-raw-v1"
+        }
+      ],
+      "date_of_birth": null,
+      "identifiers": [],
+      "contacts": [],
+      "address_token": null,
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Cyrl"
+      ]
+    }
+  ],
+  "clusters": [
+    {
+      "gold_cluster_id": "syn-person-001",
+      "split": "train",
+      "member_record_ids": [
+        "syn-rec-001",
+        "syn-rec-002"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:partial-date"
+    },
+    {
+      "gold_cluster_id": "syn-person-002",
+      "split": "train",
+      "member_record_ids": [
+        "syn-rec-003"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:partial-date-control"
+    },
+    {
+      "gold_cluster_id": "syn-person-003",
+      "split": "development",
+      "member_record_ids": [
+        "syn-rec-004"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:common-name"
+    },
+    {
+      "gold_cluster_id": "syn-person-004",
+      "split": "development",
+      "member_record_ids": [
+        "syn-rec-005"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:common-name"
+    },
+    {
+      "gold_cluster_id": "syn-person-005",
+      "split": "development",
+      "member_record_ids": [
+        "syn-rec-006"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:household"
+    },
+    {
+      "gold_cluster_id": "syn-person-006",
+      "split": "development",
+      "member_record_ids": [
+        "syn-rec-007"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:household"
+    },
+    {
+      "gold_cluster_id": "syn-person-007",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-008"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:twins"
+    },
+    {
+      "gold_cluster_id": "syn-person-008",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-009"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:twins"
+    },
+    {
+      "gold_cluster_id": "syn-person-009",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-010",
+        "syn-rec-011"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:cross-script"
+    },
+    {
+      "gold_cluster_id": "syn-person-010",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-012"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:conflicting-id"
+    },
+    {
+      "gold_cluster_id": "syn-person-011",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-013"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:conflicting-id"
+    },
+    {
+      "gold_cluster_id": "syn-person-012",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-014",
+        "syn-rec-015",
+        "syn-rec-043"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-lo-canonical-equivalence"
+    },
+    {
+      "gold_cluster_id": "syn-person-013",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-016"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-lo-orthographic-near-neighbor"
+    },
+    {
+      "gold_cluster_id": "syn-person-014",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-017",
+        "syn-rec-018",
+        "syn-rec-044"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-th-canonical-equivalence"
+    },
+    {
+      "gold_cluster_id": "syn-person-015",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-019"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-th-orthographic-near-neighbor"
+    },
+    {
+      "gold_cluster_id": "syn-person-016",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-020",
+        "syn-rec-021",
+        "syn-rec-045"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-km-canonical-equivalence"
+    },
+    {
+      "gold_cluster_id": "syn-person-017",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-022"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-km-orthographic-near-neighbor"
+    },
+    {
+      "gold_cluster_id": "syn-person-018",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-023",
+        "syn-rec-024",
+        "syn-rec-046"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-vi-canonical-equivalence"
+    },
+    {
+      "gold_cluster_id": "syn-person-019",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-025"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-vi-orthographic-near-neighbor"
+    },
+    {
+      "gold_cluster_id": "syn-person-020",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-026",
+        "syn-rec-027",
+        "syn-rec-047"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-hi-canonical-equivalence"
+    },
+    {
+      "gold_cluster_id": "syn-person-021",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-028"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-hi-orthographic-near-neighbor"
+    },
+    {
+      "gold_cluster_id": "syn-person-022",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-029",
+        "syn-rec-030",
+        "syn-rec-048"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-ar-canonical-equivalence"
+    },
+    {
+      "gold_cluster_id": "syn-person-023",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-031"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-ar-orthographic-near-neighbor"
+    },
+    {
+      "gold_cluster_id": "syn-person-024",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-032",
+        "syn-rec-033",
+        "syn-rec-049"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-ru-canonical-equivalence"
+    },
+    {
+      "gold_cluster_id": "syn-person-025",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-034"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-ru-orthographic-near-neighbor"
+    },
+    {
+      "gold_cluster_id": "syn-person-026",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-035",
+        "syn-rec-036"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-script-missing-exact-positive"
+    },
+    {
+      "gold_cluster_id": "syn-person-027",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-037"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-script-missing-near-negative"
+    },
+    {
+      "gold_cluster_id": "syn-person-028",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-038",
+        "syn-rec-039"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-language-missing-exact-positive"
+    },
+    {
+      "gold_cluster_id": "syn-person-029",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-040"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:multilingual-language-missing-near-negative"
+    },
+    {
+      "gold_cluster_id": "syn-person-030",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-041"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:no-transliteration-control-latin"
+    },
+    {
+      "gold_cluster_id": "syn-person-031",
+      "split": "held_out_test",
+      "member_record_ids": [
+        "syn-rec-042"
+      ],
+      "label_status": "synthetic_asserted",
+      "provenance_ref": "synthetic-case:no-transliteration-control-cyrillic"
+    }
+  ],
+  "pair_labels": [
+    {
+      "pair_id": "syn-pair-001",
+      "left_record_id": "syn-rec-001",
+      "right_record_id": "syn-rec-002",
+      "split": "train",
+      "label": "match",
+      "case_tags": [
+        "partial-date"
+      ],
+      "rationale": "The fixture declares one identity; month precision agrees with the full date without inventing a day.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:partial-date"
+    },
+    {
+      "pair_id": "syn-pair-002",
+      "left_record_id": "syn-rec-001",
+      "right_record_id": "syn-rec-003",
+      "split": "train",
+      "label": "non_match",
+      "case_tags": [
+        "partial-date-control"
+      ],
+      "rationale": "Different synthetic gold clusters; missing day precision alone is not a contradiction.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:partial-date-control"
+    },
+    {
+      "pair_id": "syn-pair-003",
+      "left_record_id": "syn-rec-004",
+      "right_record_id": "syn-rec-005",
+      "split": "development",
+      "label": "non_match",
+      "case_tags": [
+        "common-name"
+      ],
+      "rationale": "Identical common-name fixture and year precision, but separate synthetic gold clusters.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:common-name"
+    },
+    {
+      "pair_id": "syn-pair-004",
+      "left_record_id": "syn-rec-006",
+      "right_record_id": "syn-rec-007",
+      "split": "development",
+      "label": "non_match",
+      "case_tags": [
+        "household-shared-contact",
+        "household-shared-address"
+      ],
+      "rationale": "The two synthetic identities share household tokens; those correlated fields do not establish identity.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:household"
+    },
+    {
+      "pair_id": "syn-pair-005",
+      "left_record_id": "syn-rec-008",
+      "right_record_id": "syn-rec-009",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "twin-hard-negative"
+      ],
+      "rationale": "Synthetic twins have the same full birth date, household tokens and similar names but distinct gold clusters.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:twins"
+    },
+    {
+      "pair_id": "syn-pair-006",
+      "left_record_id": "syn-rec-010",
+      "right_record_id": "syn-rec-011",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "cross-script",
+        "transliteration-additional-evidence"
+      ],
+      "rationale": "The fixture asserts one identity across source-script and Latin representations; the transliteration remains tagged additional evidence.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:cross-script"
+    },
+    {
+      "pair_id": "syn-pair-007",
+      "left_record_id": "syn-rec-012",
+      "right_record_id": "syn-rec-013",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "conflicting-authoritative-id"
+      ],
+      "rationale": "Invented same-authority identifier collision with distinct synthetic identities; conflict must not trigger an automatic link or merge.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:conflicting-id"
+    },
+    {
+      "pair_id": "syn-pair-008",
+      "left_record_id": "syn-rec-014",
+      "right_record_id": "syn-rec-015",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "canonical-equivalence",
+        "script:Laoo"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-lo-canonical-equivalence"
+    },
+    {
+      "pair_id": "syn-pair-009",
+      "left_record_id": "syn-rec-014",
+      "right_record_id": "syn-rec-016",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "orthographic-near-neighbor",
+        "script:Laoo"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-lo-orthographic-near-neighbor"
+    },
+    {
+      "pair_id": "syn-pair-010",
+      "left_record_id": "syn-rec-017",
+      "right_record_id": "syn-rec-018",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "canonical-equivalence",
+        "script:Thai"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-th-canonical-equivalence"
+    },
+    {
+      "pair_id": "syn-pair-011",
+      "left_record_id": "syn-rec-017",
+      "right_record_id": "syn-rec-019",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "orthographic-near-neighbor",
+        "script:Thai"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-th-orthographic-near-neighbor"
+    },
+    {
+      "pair_id": "syn-pair-012",
+      "left_record_id": "syn-rec-020",
+      "right_record_id": "syn-rec-021",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "exact-name-control",
+        "script:Khmr"
+      ],
+      "rationale": "The Khmer fixture uses an exact source spelling control because this invented pair does not claim a canonical composition equivalence.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-km-exact-name"
+    },
+    {
+      "pair_id": "syn-pair-013",
+      "left_record_id": "syn-rec-020",
+      "right_record_id": "syn-rec-022",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "orthographic-near-neighbor",
+        "script:Khmr"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-km-orthographic-near-neighbor"
+    },
+    {
+      "pair_id": "syn-pair-014",
+      "left_record_id": "syn-rec-023",
+      "right_record_id": "syn-rec-024",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "canonical-equivalence",
+        "script:Latn"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-vi-canonical-equivalence"
+    },
+    {
+      "pair_id": "syn-pair-015",
+      "left_record_id": "syn-rec-023",
+      "right_record_id": "syn-rec-025",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "orthographic-near-neighbor",
+        "script:Latn"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-vi-orthographic-near-neighbor"
+    },
+    {
+      "pair_id": "syn-pair-016",
+      "left_record_id": "syn-rec-026",
+      "right_record_id": "syn-rec-027",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "canonical-equivalence",
+        "script:Deva"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-hi-canonical-equivalence"
+    },
+    {
+      "pair_id": "syn-pair-017",
+      "left_record_id": "syn-rec-026",
+      "right_record_id": "syn-rec-028",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "orthographic-near-neighbor",
+        "script:Deva"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-hi-orthographic-near-neighbor"
+    },
+    {
+      "pair_id": "syn-pair-018",
+      "left_record_id": "syn-rec-029",
+      "right_record_id": "syn-rec-030",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "canonical-equivalence",
+        "script:Arab"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-ar-canonical-equivalence"
+    },
+    {
+      "pair_id": "syn-pair-019",
+      "left_record_id": "syn-rec-029",
+      "right_record_id": "syn-rec-031",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "orthographic-near-neighbor",
+        "script:Arab"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-ar-orthographic-near-neighbor"
+    },
+    {
+      "pair_id": "syn-pair-020",
+      "left_record_id": "syn-rec-032",
+      "right_record_id": "syn-rec-033",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "canonical-equivalence",
+        "script:Cyrl"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-ru-canonical-equivalence"
+    },
+    {
+      "pair_id": "syn-pair-021",
+      "left_record_id": "syn-rec-032",
+      "right_record_id": "syn-rec-034",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "orthographic-near-neighbor",
+        "script:Cyrl"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-ru-orthographic-near-neighbor"
+    },
+    {
+      "pair_id": "syn-pair-022",
+      "left_record_id": "syn-rec-035",
+      "right_record_id": "syn-rec-036",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "subgroup-missing-control"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-script-missing-positive"
+    },
+    {
+      "pair_id": "syn-pair-023",
+      "left_record_id": "syn-rec-035",
+      "right_record_id": "syn-rec-037",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "subgroup-missing-control",
+        "orthographic-near-neighbor"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-script-missing-negative"
+    },
+    {
+      "pair_id": "syn-pair-024",
+      "left_record_id": "syn-rec-038",
+      "right_record_id": "syn-rec-039",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "subgroup-missing-control"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-language-missing-positive"
+    },
+    {
+      "pair_id": "syn-pair-025",
+      "left_record_id": "syn-rec-038",
+      "right_record_id": "syn-rec-040",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "subgroup-missing-control",
+        "orthographic-near-neighbor"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:multilingual-language-missing-negative"
+    },
+    {
+      "pair_id": "syn-pair-026",
+      "left_record_id": "syn-rec-041",
+      "right_record_id": "syn-rec-042",
+      "split": "held_out_test",
+      "label": "non_match",
+      "case_tags": [
+        "no-transliteration-control"
+      ],
+      "rationale": "Invented multilingual strings exercise subgroup attribution and candidate retrieval mechanics only.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:no-transliteration-control"
+    },
+    {
+      "pair_id": "syn-pair-027",
+      "left_record_id": "syn-rec-014",
+      "right_record_id": "syn-rec-043",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Laoo"
+      ],
+      "rationale": "Synthetic date-missing, one-Unicode-scalar same-script control exercises approximate candidate generation only; it is not real-world identity or accuracy evidence.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:approximate-candidate-only"
+    },
+    {
+      "pair_id": "syn-pair-028",
+      "left_record_id": "syn-rec-017",
+      "right_record_id": "syn-rec-044",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Thai"
+      ],
+      "rationale": "Synthetic date-missing, one-Unicode-scalar same-script control exercises approximate candidate generation only; it is not real-world identity or accuracy evidence.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:approximate-candidate-only"
+    },
+    {
+      "pair_id": "syn-pair-029",
+      "left_record_id": "syn-rec-020",
+      "right_record_id": "syn-rec-045",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Khmr"
+      ],
+      "rationale": "Synthetic date-missing, one-Unicode-scalar same-script control exercises approximate candidate generation only; it is not real-world identity or accuracy evidence.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:approximate-candidate-only"
+    },
+    {
+      "pair_id": "syn-pair-030",
+      "left_record_id": "syn-rec-023",
+      "right_record_id": "syn-rec-046",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Latn"
+      ],
+      "rationale": "Synthetic date-missing, one-Unicode-scalar same-script control exercises approximate candidate generation only; it is not real-world identity or accuracy evidence.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:approximate-candidate-only"
+    },
+    {
+      "pair_id": "syn-pair-031",
+      "left_record_id": "syn-rec-026",
+      "right_record_id": "syn-rec-047",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Deva"
+      ],
+      "rationale": "Synthetic date-missing, one-Unicode-scalar same-script control exercises approximate candidate generation only; it is not real-world identity or accuracy evidence.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:approximate-candidate-only"
+    },
+    {
+      "pair_id": "syn-pair-032",
+      "left_record_id": "syn-rec-029",
+      "right_record_id": "syn-rec-048",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Arab"
+      ],
+      "rationale": "Synthetic date-missing, one-Unicode-scalar same-script control exercises approximate candidate generation only; it is not real-world identity or accuracy evidence.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:approximate-candidate-only"
+    },
+    {
+      "pair_id": "syn-pair-033",
+      "left_record_id": "syn-rec-032",
+      "right_record_id": "syn-rec-049",
+      "split": "held_out_test",
+      "label": "match",
+      "case_tags": [
+        "approximate-candidate-only-control",
+        "script:Cyrl"
+      ],
+      "rationale": "Synthetic date-missing, one-Unicode-scalar same-script control exercises approximate candidate generation only; it is not real-world identity or accuracy evidence.",
+      "label_guide_version": "synthetic-guide-v1",
+      "provenance_ref": "synthetic-case:approximate-candidate-only"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "syn-query-001",
+      "query_record_id": "syn-rec-001",
+      "split": "train",
+      "eligible_match_record_ids": [
+        "syn-rec-002"
+      ],
+      "hard_negative_record_ids": [
+        "syn-rec-003"
+      ],
+      "case_tags": [
+        "partial-date"
+      ]
+    },
+    {
+      "query_id": "syn-query-002",
+      "query_record_id": "syn-rec-004",
+      "split": "development",
+      "eligible_match_record_ids": [],
+      "hard_negative_record_ids": [
+        "syn-rec-005"
+      ],
+      "case_tags": [
+        "common-name"
+      ]
+    },
+    {
+      "query_id": "syn-query-003",
+      "query_record_id": "syn-rec-006",
+      "split": "development",
+      "eligible_match_record_ids": [],
+      "hard_negative_record_ids": [
+        "syn-rec-007"
+      ],
+      "case_tags": [
+        "household-shared-contact",
+        "household-shared-address"
+      ]
+    },
+    {
+      "query_id": "syn-query-004",
+      "query_record_id": "syn-rec-008",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [],
+      "hard_negative_record_ids": [
+        "syn-rec-009"
+      ],
+      "case_tags": [
+        "twin-hard-negative"
+      ]
+    },
+    {
+      "query_id": "syn-query-005",
+      "query_record_id": "syn-rec-010",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [
+        "syn-rec-011"
+      ],
+      "hard_negative_record_ids": [],
+      "case_tags": [
+        "cross-script"
+      ]
+    },
+    {
+      "query_id": "syn-query-006",
+      "query_record_id": "syn-rec-012",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [],
+      "hard_negative_record_ids": [
+        "syn-rec-013"
+      ],
+      "case_tags": [
+        "conflicting-authoritative-id"
+      ]
+    },
+    {
+      "query_id": "syn-query-007",
+      "query_record_id": "syn-rec-014",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [
+        "syn-rec-015",
+        "syn-rec-043"
+      ],
+      "hard_negative_record_ids": [
+        "syn-rec-016"
+      ],
+      "case_tags": [
+        "canonical-equivalence",
+        "orthographic-near-neighbor",
+        "script:Laoo"
+      ]
+    },
+    {
+      "query_id": "syn-query-008",
+      "query_record_id": "syn-rec-017",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [
+        "syn-rec-018",
+        "syn-rec-044"
+      ],
+      "hard_negative_record_ids": [
+        "syn-rec-019"
+      ],
+      "case_tags": [
+        "canonical-equivalence",
+        "orthographic-near-neighbor",
+        "script:Thai"
+      ]
+    },
+    {
+      "query_id": "syn-query-009",
+      "query_record_id": "syn-rec-020",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [
+        "syn-rec-021",
+        "syn-rec-045"
+      ],
+      "hard_negative_record_ids": [
+        "syn-rec-022"
+      ],
+      "case_tags": [
+        "exact-name-control",
+        "orthographic-near-neighbor",
+        "script:Khmr"
+      ]
+    },
+    {
+      "query_id": "syn-query-010",
+      "query_record_id": "syn-rec-023",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [
+        "syn-rec-024",
+        "syn-rec-046"
+      ],
+      "hard_negative_record_ids": [
+        "syn-rec-025"
+      ],
+      "case_tags": [
+        "canonical-equivalence",
+        "orthographic-near-neighbor",
+        "script:Latn"
+      ]
+    },
+    {
+      "query_id": "syn-query-011",
+      "query_record_id": "syn-rec-026",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [
+        "syn-rec-027",
+        "syn-rec-047"
+      ],
+      "hard_negative_record_ids": [
+        "syn-rec-028"
+      ],
+      "case_tags": [
+        "canonical-equivalence",
+        "orthographic-near-neighbor",
+        "script:Deva"
+      ]
+    },
+    {
+      "query_id": "syn-query-012",
+      "query_record_id": "syn-rec-029",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [
+        "syn-rec-030",
+        "syn-rec-048"
+      ],
+      "hard_negative_record_ids": [
+        "syn-rec-031"
+      ],
+      "case_tags": [
+        "canonical-equivalence",
+        "orthographic-near-neighbor",
+        "script:Arab"
+      ]
+    },
+    {
+      "query_id": "syn-query-013",
+      "query_record_id": "syn-rec-032",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [
+        "syn-rec-033",
+        "syn-rec-049"
+      ],
+      "hard_negative_record_ids": [
+        "syn-rec-034"
+      ],
+      "case_tags": [
+        "canonical-equivalence",
+        "orthographic-near-neighbor",
+        "script:Cyrl"
+      ]
+    },
+    {
+      "query_id": "syn-query-014",
+      "query_record_id": "syn-rec-035",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [
+        "syn-rec-036"
+      ],
+      "hard_negative_record_ids": [
+        "syn-rec-037"
+      ],
+      "case_tags": [
+        "subgroup-missing-control"
+      ]
+    },
+    {
+      "query_id": "syn-query-015",
+      "query_record_id": "syn-rec-038",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [
+        "syn-rec-039"
+      ],
+      "hard_negative_record_ids": [
+        "syn-rec-040"
+      ],
+      "case_tags": [
+        "subgroup-missing-control"
+      ]
+    },
+    {
+      "query_id": "syn-query-016",
+      "query_record_id": "syn-rec-041",
+      "split": "held_out_test",
+      "eligible_match_record_ids": [],
+      "hard_negative_record_ids": [
+        "syn-rec-042"
+      ],
+      "case_tags": [
+        "no-transliteration-control"
+      ]
+    }
+  ]
+}
