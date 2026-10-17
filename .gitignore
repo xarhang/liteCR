@@ -9,6 +9,8 @@
 **/*.tsbuildinfo
 /node-v*-linux-x64/
 /node-v*-linux-x64.tar.xz
+/SHA256SUMS
+/SHASUMS256.txt
 
 # Local state and credentials
 /scratch/
