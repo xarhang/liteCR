@@ -17,7 +17,7 @@ license = "AGPL-3.0-or-later"
 publish = false
 
 [workspace.dependencies]
-async-trait = "=0.1.89"
+async-trait = "=0.1.92"
 axum = { version = "=0.8.9", features = ["http1", "json", "tokio"] }
 icu_locid = "=1.5.0"
 icu_plurals = "=1.5.0"
