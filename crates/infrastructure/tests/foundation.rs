@@ -23,6 +23,25 @@ async fn postgres_migration_retry_rollback_readiness_and_schema_guard() {
         .expect("first embedded migration succeeds");
     migrate(&pool).await.expect("migration retry is idempotent");
 
+    let ledger_schemas: Vec<String> = sqlx::query_scalar(
+        "SELECT n.nspname::text FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace \
+         WHERE c.relname='_sqlx_migrations' AND c.relkind='r' ORDER BY n.nspname",
+    )
+    .fetch_all(&pool)
+    .await
+    .expect("migration ledger location is queryable");
+    assert_eq!(ledger_schemas, vec!["public"]);
+
+    // A fresh pool must resolve the same ledger after schema litecr exists,
+    // including when the database login itself is named litecr (the CI user).
+    let reconnect = connect(&database_url, 1)
+        .await
+        .expect("fresh migration connection opens");
+    migrate(&reconnect)
+        .await
+        .expect("migration retry through a fresh pool is idempotent");
+    reconnect.close().await;
+
     let identifier_index: (bool, bool, bool) = sqlx::query_as(
         "SELECT i.indisvalid,i.indisready,NOT i.indisunique \
          FROM pg_index i JOIN pg_class c ON c.oid=i.indexrelid \

@@ -46,7 +46,15 @@ fn pool_options(max_connections: u32) -> sqlx::postgres::PgPoolOptions {
         .after_connect(|connection, _| {
             Box::pin(async move {
                 sqlx::query("SET synchronous_commit = on")
-                    .execute(connection)
+                    .execute(&mut *connection)
+                    .await?;
+                // SQLx's migration ledger is unqualified. With PostgreSQL's
+                // default "$user", public path, creating schema litecr changes
+                // the creation target when the login is also named litecr.
+                // Keep the ledger in public across fresh/reused connections;
+                // application tables are explicitly schema-qualified.
+                sqlx::query("SET search_path TO public")
+                    .execute(&mut *connection)
                     .await?;
                 Ok(())
             })
