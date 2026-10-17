@@ -20,7 +20,9 @@ async fn populated_schema28_index_upgrade_preserves_identity_and_constraints() {
     let database = format!("litecr_index_upgrade_{}_{suffix}", std::process::id());
     let options = PgConnectOptions::from_str(&database_url)
         .expect("test owner URL is valid")
-        .database(&database);
+        .database(&database)
+        // Match the application's fixed migration-ledger namespace.
+        .options([("search_path", "public")]);
     sqlx::query(&format!("CREATE DATABASE {database}"))
         .execute(&owner)
         .await

@@ -24,7 +24,9 @@ async fn populated_marker_partition_upgrade_rollback_acl_and_pruning() {
     // These SQL identifiers contain only fixed ASCII prefixes and numeric suffixes.
     let options = PgConnectOptions::from_str(&url)
         .expect("valid synthetic URL")
-        .database(&database);
+        .database(&database)
+        // Match the application's fixed migration-ledger namespace.
+        .options([("search_path", "public")]);
     sqlx::query(&format!("CREATE DATABASE {database}"))
         .execute(&owner)
         .await
