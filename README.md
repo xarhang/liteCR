@@ -37,7 +37,7 @@ After setup, follow the [usage guide](docs/USAGE.md) for synthetic registration,
 
 [License details](LICENSING.md), [community conduct](CODE_OF_CONDUCT.md), [support](SUPPORT.md).
 
-The [documentation website](docs/GITHUB-PAGES.md) can be built locally and published with the included GitHub Pages workflow. It contains setup and usage guides; the registry itself requires the server, database and IdP. The repository is [xarhang/liteCR](https://github.com/xarhang/liteCR). The intended Pages address is `https://xarhang.github.io/liteCR/`; hosting has not yet been verified.
+Read the [documentation website](https://xarhang.github.io/liteCR/) for the product overview, setup, usage and API guides, or [build the site locally](docs/GITHUB-PAGES.md). The registry itself requires the server, database and IdP. Source code is available at [xarhang/liteCR](https://github.com/xarhang/liteCR).
 
 ## License
 

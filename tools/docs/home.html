@@ -1,0 +1,71 @@
+<section class="hero section-width" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="eyebrow-line"></span> Open-source patient identity registry</p>
+    <h1 id="hero-title">Patient identity.<br><span>Source context intact.</span></h1>
+    <p class="hero-lead">Bring records from different sources into a registry that preserves original names, identifiers and provenance. Find possible duplicates, compare the evidence and keep people in control of identity decisions.</p>
+    <div class="hero-actions"><a class="button primary" href="docs/BETA-SETUP.html">Set up locally <span aria-hidden="true">→</span></a><a class="button secondary" href="docs/USAGE.html">Explore the workflow</a></div>
+    <p class="hero-note"><span class="beta-dot" aria-hidden="true"></span> Experimental Beta · Use synthetic data in an isolated environment.</p>
+  </div>
+  <figure class="registry-figure">
+    <div class="figure-top"><span class="figure-label">SOURCE → EVIDENCE → REVIEW</span><span class="figure-tag">Synthetic example</span></div>
+    <div class="source-record"><div class="record-avatar" aria-hidden="true">A</div><div><span class="record-source">Source A · Local registration</span><strong lang="lo">ສົມໃຈ ວົງສີ</strong><span class="record-id">SOURCE RECORD / A-001</span></div><span class="record-state">Original</span></div>
+    <div class="source-record"><div class="record-avatar alt" aria-hidden="true">B</div><div><span class="record-source">Source B · Imported record</span><strong>Somchai Vongsi</strong><span class="record-id">SOURCE RECORD / B-014</span></div><span class="record-state">Original</span></div>
+    <div class="evidence-connector"><span aria-hidden="true">↓</span> Compare names, identifiers &amp; source facts</div>
+    <div class="review-record"><div class="review-symbol" aria-hidden="true">?</div><div><strong>Possible match. A decision is still needed.</strong><p>Similarity is evidence, not proof of identity.</p></div></div>
+    <figcaption>A conceptual workflow, not a live match result. Original records remain available for review.</figcaption>
+  </figure>
+</section>
+<div class="foundation-strip"><div class="section-width"><span>Built with</span><strong>Rust</strong><span aria-hidden="true">/</span><strong>React</strong><span aria-hidden="true">/</span><strong>PostgreSQL</strong><a href="LICENSING.html">AGPL-3.0-or-later <span aria-hidden="true">↗</span></a></div></div>
+
+<section class="section-width section-space" aria-labelledby="start-title">
+  <div class="section-heading"><div><p class="eyebrow">Find your starting point</p><h2 id="start-title">What would you like to do?</h2></div><a class="text-link" href="docs/README.html">All documentation <span aria-hidden="true">→</span></a></div>
+  <div class="task-grid">
+    <a class="task-card" href="docs/BETA-SETUP.html"><span class="card-number">01 / EVALUATE</span><h3>Run your first registry</h3><p>Build the application, prepare a disposable database and configure OIDC access.</p><span class="card-link">Installation &amp; setup <span aria-hidden="true">↗</span></span></a>
+    <a class="task-card" href="docs/USAGE.html"><span class="card-number">02 / UNDERSTAND</span><h3>Try the identity workflow</h3><p>Register invented records, find candidates and work through an authorized review.</p><span class="card-link">Follow the usage guide <span aria-hidden="true">↗</span></span></a>
+    <a class="task-card" href="docs/API.html"><span class="card-number">03 / INTEGRATE</span><h3>Work with the API</h3><p>Explore registration, scoped lookup, matching and review routes, plus the limited FHIR adapter.</p><span class="card-link">Read the API overview <span aria-hidden="true">↗</span></span></a>
+  </div>
+</section>
+
+<section class="workflow-section" aria-labelledby="workflow-title"><div class="section-width section-space">
+  <div class="section-heading"><div><p class="eyebrow">The identity lifecycle</p><h2 id="workflow-title">From a record to a reviewed decision.</h2></div><p class="heading-note">A name match never silently merges two people.</p></div>
+  <ol class="workflow-list">
+    <li><span class="step-index">01</span><h3>Register</h3><p>Retain the original-script name, assigning authority, source key and version.</p><a href="docs/USAGE.html#register-an-invented-source-record">Source records →</a></li>
+    <li><span class="step-index">02</span><h3>Compare</h3><p>Generate candidate evidence. Examine similarities alongside conflicting facts.</p><a href="docs/USAGE.html#search-and-request-matching">Matching evidence →</a></li>
+    <li><span class="step-index">03</span><h3>Review</h3><p>An authorized reviewer considers the evidence and submits a version-checked decision.</p><a href="docs/USAGE.html#review">Review decisions →</a></li>
+    <li><span class="step-index">04</span><h3>Keep the context</h3><p>Preserve provenance, public IDs, aliases and audit history through identity changes.</p><a href="docs/ARCHITECTURE.html">Registry architecture →</a></li>
+  </ol>
+</div></section>
+
+<section class="section-width section-space build-section" aria-labelledby="build-title">
+  <div><p class="eyebrow">Start on your machine</p><h2 id="build-title">Build the code.<br>Then connect your test environment.</h2><p>The web interface is embedded into the Rust server. Build web assets first, then compile the backend.</p>
+    <dl class="prerequisites"><div><dt>Toolchain</dt><dd>Rust 1.85+ · Node 22.12+ in supported release lines</dd></div><div><dt>Runtime</dt><dd>PostgreSQL · OIDC provider · Scoped user grants</dd></div><div><dt>Evaluation data</dt><dd>Invented identities in an isolated database</dd></div></dl>
+    <a class="text-link" href="docs/BETA-SETUP.html">Complete setup instructions <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="terminal"><div class="terminal-bar"><span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Build from source</span><span>Shell</span></div><pre><code><span class="code-comment"># Get the source</span>
+git clone https://github.com/xarhang/liteCR.git
+cd liteCR
+
+<span class="code-comment"># Build the embedded web interface</span>
+cd apps/web
+npm ci
+npm run build
+cd ../..
+
+<span class="code-comment"># Compile the server</span>
+cargo build --locked -p litecr-server</code></pre><p>This builds the application. Database migration, OIDC and access provisioning are separate setup steps.</p></div>
+</section>
+
+<section class="section-width section-space capabilities" aria-labelledby="capabilities-title">
+  <div class="section-heading"><div><p class="eyebrow">What is in the Beta</p><h2 id="capabilities-title">The boundaries are part of the design.</h2></div></div>
+  <div class="capability-grid"><article><h3>Original values &amp; provenance</h3><p>Keep source assertions and original-script names. Normalized values support comparison without replacing the source.</p><a href="docs/ARCHITECTURE.html">How records are represented →</a></article><article><h3>Scoped access</h3><p>OIDC login establishes identity. Registry, organization and resource permissions determine what a user can do.</p><a href="docs/contracts/ACCESS.html">The access model →</a></article><article><h3>Human-reviewed matching</h3><p>Scores help assess possible duplicates. Family members, twins and similar names still need evidence that distinguishes people.</p><a href="docs/BETA.html">Matching evaluation limits →</a></article><article><h3>Integration with explicit contracts</h3><p>Use the registry API, migration package format or narrow FHIR R4 Patient adapter. External compatibility must be tested.</p><a href="docs/integration/FHIR-R4-BASELINE.html">FHIR surface &amp; limits →</a></article></div>
+  <aside class="beta-callout"><span class="callout-label">Before you evaluate</span><div><h3>Experimental software. Synthetic data only.</h3><p>Real-population accuracy and production capacity are not established. Setup requires manual grants; there is no first-admin wizard. External OpenCR compatibility, full FHIR coverage and production readiness are not claimed.</p><a href="docs/BETA.html">Read all known limits <span aria-hidden="true">→</span></a></div></aside>
+</section>
+
+<section class="section-width section-space faq-section" aria-labelledby="questions-title"><div><p class="eyebrow">A few practical questions</p><h2 id="questions-title">Before you start.</h2><p>Need more detail? <a href="SUPPORT.html">Read the support guide.</a></p></div><div class="faq-list">
+  <details><summary>Does liteCR require OpenCR?</summary><p>No. liteCR runs with its own Rust server, PostgreSQL database and configured IdP. OpenCR interoperability is a separate integration concern and has not been verified for this Beta. See the <a href="docs/ARCHITECTURE.html">architecture</a>.</p></details>
+  <details><summary>Can I search for someone by name?</summary><p>Person search currently accepts an exact public ID or alias. Demographic candidate comparison uses the separate matching workflow. See <a href="docs/USAGE.html">usage</a> and the <a href="docs/API.html">API overview</a>.</p></details>
+  <details><summary>Can I run the registry on GitHub Pages?</summary><p>No. This site hosts static documentation. Registry operations require the backend, PostgreSQL and OIDC. Follow <a href="docs/BETA-SETUP.html">local setup</a> to evaluate the application.</p></details>
+  <details><summary>How can I contribute or report a bug?</summary><p>Use a minimal synthetic reproduction and include your commit/version. Never include patient data, cookies or credentials. Read <a href="CONTRIBUTING.html">contributing</a>; suspected vulnerabilities follow the <a href="SECURITY.html">security reporting process</a>.</p></details>
+</div></section>
+
+<section class="section-width closing-section"><div><p class="eyebrow">Explore at your own pace</p><h2>A clear path from setup to operations.</h2><p>Read the guides, try the synthetic workflow and report what you find.</p></div><a class="button primary" href="docs/README.html">Open the documentation <span aria-hidden="true">→</span></a></section>

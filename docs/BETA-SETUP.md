@@ -7,6 +7,8 @@ Use an empty, disposable database and synthetic identities. These instructions d
 Install Rust 1.85 or newer, a Node version supported by `apps/web/package.json`, and PostgreSQL. PostgreSQL 18 is the native deployment target; other CI entries are compatibility checks, not a support promise.
 
 ```sh
+git clone https://github.com/xarhang/liteCR.git
+cd liteCR
 cd apps/web
 npm ci
 npm run build
