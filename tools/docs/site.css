@@ -168,3 +168,6 @@ p { margin: 0 0 1rem; }
 .figure-label, .figure-tag, .record-source, .record-id, .record-state, .evidence-connector, .review-record strong, .review-record p, .registry-figure figcaption, .card-number, .callout-label, .terminal-bar, .terminal > p, .site-footer .footer-note { font-size: .75rem; }
 
 .prose td code { white-space: nowrap; overflow-wrap: normal; }
+
+.table-scroll { max-width: 100%; overflow-x: auto; margin-block: 1.5rem; border-radius: .3rem; }
+.prose .table-scroll table { display: table; margin: 0; overflow: visible; }

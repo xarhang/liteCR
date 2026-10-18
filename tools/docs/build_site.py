@@ -66,6 +66,8 @@ def build(output: Path) -> None:
         raise ValueError("Choose a new or empty output directory")
     output.mkdir(parents=True, exist_ok=True)
     md = MarkdownIt("commonmark", {"html": False}).enable("table")
+    md.renderer.rules['table_open'] = lambda *_: '<div class="table-scroll" role="region" aria-label="Scrollable reference table" tabindex="0"><table>\n'
+    md.renderer.rules['table_close'] = lambda *_: '</table></div>\n'
     attachments: dict[str, Path] = {}
     for name, destination in DEST.items():
         depth = len(Path(destination).parts) - 1
