@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 from html.parser import HTMLParser
 from pathlib import Path
@@ -65,6 +66,7 @@ def build(output: Path) -> None:
     if output.exists() and any(output.iterdir()):
         raise ValueError("Choose a new or empty output directory")
     output.mkdir(parents=True, exist_ok=True)
+    style_version = hashlib.sha256((ROOT / 'tools/docs/site.css').read_bytes()).hexdigest()[:12]
     md = MarkdownIt("commonmark", {"html": False}).enable("table")
     md.renderer.rules['table_open'] = lambda *_: '<div class="table-scroll" role="region" aria-label="Scrollable reference table" tabindex="0"><table>\n'
     md.renderer.rules['table_close'] = lambda *_: '</table></div>\n'
@@ -117,7 +119,7 @@ def build(output: Path) -> None:
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="description" content="liteCR patient identity registry. Learn how to set up, evaluate, integrate and operate the experimental Beta with synthetic data.">
-<title>{html.escape(title)} · liteCR</title><link rel="stylesheet" href="{prefix}assets/site.css"></head>
+<title>{html.escape(title)} · liteCR</title><link rel="stylesheet" href="{prefix}assets/site.css?v={style_version}"></head>
 <body><a class="skip" href="#content">Skip to content</a>
 {header(prefix, home)}{content}
 <footer class="site-footer"><div><a class="brand" href="{prefix}index.html">{MARK}<span>liteCR</span></a><p>Patient identity. Source context. Human review.</p></div>
